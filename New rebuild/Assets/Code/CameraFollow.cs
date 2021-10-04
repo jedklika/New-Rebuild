@@ -3,7 +3,7 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     // Transform playerFollow is used to track the orientation of the player
-    private Transform playerFollow;
+    public Transform playerFollow;
 
     // Determines in a range from [1 to 10] on how smooth the follow camera should be
     [Range(1,10)]
@@ -12,10 +12,10 @@ public class CameraFollow : MonoBehaviour
     // Used to provide an offset from the player's position
     public Vector3 offset;
 
-    /*
-    public final endBackgroundPosition = 200;
-    public final beginBackgroundPosition = 1;
-    */
+
+    //public float endBackgroundPosition = 200f;
+    //public float beginBackgroundPosition = 1f;
+    
 
 
     // Start is called before the first frame update
@@ -43,11 +43,11 @@ public class CameraFollow : MonoBehaviour
         //Sets the current camera position with an updated position(smoothPosition)
         transform.position = smoothPosition;
 
-        /*
-        if(playerFollow.position.x > endBackgroundPosition){
-            temp.x = 
-            transform.position = temp;
-        }
-        */
+        
+        //if(playerFollow.position.x > endBackgroundPosition){
+        //    temp.x = 
+        //    transform.position = temp;
+        //}
+       
     }
 }
