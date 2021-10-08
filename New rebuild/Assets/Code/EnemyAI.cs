@@ -30,7 +30,7 @@ public class EnemyAI : MonoBehaviour
     private float waitTime;
     public float startWaitTime;
 
-
+    private SpriteRenderer SR;
 
 
     public Transform[] moveSpots;
@@ -46,27 +46,36 @@ public class EnemyAI : MonoBehaviour
     {
         current = Random.Range(0, moveSpots.Length);
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        SR = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
         STATE enemyState = STATE.Roaming;
-     
+        Debug.Log("Roamer");
+        SR.color = Color.blue;
+
 
         if (Vector2.Distance(target.position, transform.position) < enemyRadius){
             enemyState = STATE.ChaseEnemy;
+            Debug.Log("Kill");
+            SR.color = Color.red;
         }
         switch (enemyState)
         {
             case (STATE.ChaseEnemy):
                 if (Vector2.Distance(transform.position, target.position) > enemyStoppingDistance){
                     transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+                    Debug.Log("Kill Player");
+                    //SR.color = Color.red;
                 }
                 break;
             case (STATE.Roaming):
                 transform.position = Vector2.MoveTowards(transform.position, moveSpots[current].position, speed * Time.deltaTime);
-                    if (Vector2.Distance(transform.position,moveSpots[current].position) < 0.2f) { 
+                Debug.Log("Roaming");
+                //SR.color = Color.blue;
+                if (Vector2.Distance(transform.position,moveSpots[current].position) < 0.2f) { 
                         if(waitTime <= 0)
                         {
                             current = Random.Range(0, moveSpots.Length);
