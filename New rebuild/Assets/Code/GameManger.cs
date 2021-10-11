@@ -8,6 +8,10 @@ public class GameManger : MonoBehaviour
     public float playerHealth;
     public float enemeyHealth;
     public float damage;
+    public int pistolLevel;
+    public int shotgunLevel;
+    public int rifleLevel;
+
     // Start is called before the first frame update
     void Start()
     {

@@ -8,11 +8,13 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 movement;
     private SpriteRenderer SR;
+    private Animator Anim;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         SR = GetComponent<SpriteRenderer>();
+        Anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -22,11 +24,13 @@ public class PlayerMovement : MonoBehaviour
         movement = moveInput.normalized * speed;
         if (Input.GetAxisRaw("Horizontal") == 1)
         {
-            SR.flipX = true;
+            Anim.SetBool("isLeft", false);
+            Anim.SetBool("isRight", true);
         }
         if (Input.GetAxisRaw("Horizontal") == -1)
         {
-            SR.flipX = false;
+            Anim.SetBool("isLeft", true);
+            Anim.SetBool("isRight", false);
         }
     }
     private void FixedUpdate()

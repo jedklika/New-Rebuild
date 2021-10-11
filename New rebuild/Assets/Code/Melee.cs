@@ -13,17 +13,14 @@ public class Melee : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(1) && timeBtwAttack >= 5)
+        if(Time.time > startTimeBtwAttack)
         {
-            timeBtwAttack = 0;
-            Debug.Log("melee");
-            Debug.Log(timeBtwAttack);
+            if (Input.GetMouseButtonDown(1))
+            {
+                Debug.Log("melee");
+                startTimeBtwAttack = Time.time + timeBtwAttack;
+            }
         }
-        else if (Input.GetMouseButtonDown(1) && timeBtwAttack < 5)
-        {
-            Debug.Log("too soon");
-            timeBtwAttack = 0;
-            Debug.Log(timeBtwAttack);
-        }
+
     }
 }
