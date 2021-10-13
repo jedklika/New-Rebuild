@@ -20,18 +20,38 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        movement = moveInput.normalized * speed;
-        if (Input.GetAxisRaw("Horizontal") == 1)
+            Vector2 moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+            movement = moveInput.normalized * speed;
+            if (Input.GetAxisRaw("Horizontal") == 1)
+            {
+                Anim.SetInteger("KeyInput", 1);
+            }
+            else if (Input.GetAxisRaw("Horizontal") == -1)
+            {
+                Anim.SetInteger("KeyInput", -1);
+            }
+            else if (Input.GetAxisRaw("Vertical") == 1)
+            {
+                Anim.SetInteger("KeyInput", 2);
+            }
+            else if (Input.GetAxisRaw("Vertical") == -1)
+            {
+                Anim.SetInteger("KeyInput", -2);
+            }
+            else
+            {
+                Anim.SetInteger("KeyInput", 0);
+            }
+        if (Input.GetAxisRaw("Horizontal") != 0 && Input.GetAxisRaw("Vertical") != 0)
         {
-            Anim.SetBool("isLeft", false);
-            Anim.SetBool("isRight", true);
+            speed = 0;
+            Anim.SetInteger("KeyInput", 0);
         }
-        if (Input.GetAxisRaw("Horizontal") == -1)
+        else
         {
-            Anim.SetBool("isLeft", true);
-            Anim.SetBool("isRight", false);
+            speed = 10;
         }
+
     }
     private void FixedUpdate()
     {
