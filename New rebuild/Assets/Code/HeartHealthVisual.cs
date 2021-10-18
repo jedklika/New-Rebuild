@@ -14,9 +14,9 @@ public class HeartHealthVisual : MonoBehaviour
 
     //stores list of heart images
     private List<HeartImage> heartImageList;
+    private HeartHealthSystem heartsHealthSystem;
 
-
-    //heaert image created here
+    //heart image created here
     private void Awake()
     {
         heartImageList = new List<HeartImage>();
@@ -25,10 +25,27 @@ public class HeartHealthVisual : MonoBehaviour
 
     private void Start()
     {
-        //creates hearts
-        CreateHeartImage(new Vector2(-360, 195)).SetHeartFragments(2);
-        CreateHeartImage(new Vector2(-310, 195)).SetHeartFragments(1); ;
-        CreateHeartImage(new Vector2(-260, 195)).SetHeartFragments(0); ;
+        HeartHealthSystem heartsHealthSystem = new HeartHealthSystem(3);
+        SetHeartsHealthSystem(heartsHealthSystem);
+       
+    }
+
+    //connects logic from HeartHealthSystem to the Visual
+    public void SetHeartsHealthSystem(HeartHealthSystem heartsHealthSystem)
+    {
+        this.heartsHealthSystem = heartsHealthSystem;
+
+        List<HeartHealthSystem.Heart> heartList = heartsHealthSystem.GetHeartList();
+        for(int i = 0; i < heartList.Count; i++)
+        {
+            //offset images, everytime you add a heart it will move 50 spaces right
+            //origianal place is -360,195
+            HeartHealthSystem.Heart heart = heartList[i];
+            Vector2 heartAnchoredPosition = new Vector2(-360, 195);
+            CreateHeartImage(heartAnchoredPosition).SetHeartFragments(heart.GetFragmentAmount());
+            heartAnchoredPosition += new Vector2(-50, 0);
+        }
+
     }
 
     //Function to create heart images and returns them
@@ -53,7 +70,7 @@ public class HeartHealthVisual : MonoBehaviour
         HeartImage heartImage = new HeartImage(this, heartImageUI);
         heartImageList.Add(heartImage);
 
-        //idk i'm getting error
+        
         return heartImage;
 
     }
@@ -61,6 +78,7 @@ public class HeartHealthVisual : MonoBehaviour
     //represents a single heart
     public class HeartImage
     {
+        private int fragments; //maybe remove
         private Image heartImage;
         private HeartHealthVisual heartsHealthVisual;
         public HeartImage(HeartHealthVisual heartsHealthVisual, Image heartImage)
@@ -72,7 +90,9 @@ public class HeartHealthVisual : MonoBehaviour
 
         //sets the "fragments"; half heart, full heart, empty heart
         public void SetHeartFragments(int fragments)
+            
         {
+            this.fragments = fragments; //maybe remove
             switch (fragments)
             {
                 case 0: heartImage.sprite = heartsHealthVisual.heart0Sprite; break;
