@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class GameManger : MonoBehaviour
 {
     public float playerHealth;
-    public float enemeyHealth;
     public float damage;
     public int pistolLevel;
     public int shotgunLevel;
