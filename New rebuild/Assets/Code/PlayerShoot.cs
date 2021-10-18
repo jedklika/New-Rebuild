@@ -26,6 +26,7 @@ public class PlayerShoot : MonoBehaviour
                 GameObject bulletShoot = (GameObject)Instantiate(bullet, transform.position, Quaternion.identity);
                 Vector3 direction = (Input.mousePosition - myScreenPos).normalized;
                 bulletShoot.GetComponent<Rigidbody2D>().velocity = new Vector2(direction.x, direction.y) * bulletSpeed;
+                WS.CanSwitch = false;
                 startTimeBtwAttack = Time.time + timeBtwAttack;
             }
             else if(Input.GetMouseButton(0) && WS.gun == 3)
@@ -33,6 +34,7 @@ public class PlayerShoot : MonoBehaviour
                 GameObject bulletShoot = (GameObject)Instantiate(bullet, transform.position, Quaternion.identity);
                 Vector3 direction = (Input.mousePosition - myScreenPos).normalized;
                 bulletShoot.GetComponent<Rigidbody2D>().velocity = new Vector2(direction.x, direction.y) * bulletSpeed;
+                WS.CanSwitch = false;
                 startTimeBtwAttack = Time.time + timeBtwAttack;
             }
         }

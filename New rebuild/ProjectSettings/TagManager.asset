@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Enemy
   - Pointer
+  - NorthWall
+  - SouthWall
+  - WestWall
+  - EastWall
   layers:
   - Default
   - TransparentFX
