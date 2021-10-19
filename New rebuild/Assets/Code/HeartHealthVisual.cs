@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+//using CodeMonkey; // remove later
 
 public class HeartHealthVisual : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class HeartHealthVisual : MonoBehaviour
     //heart image created here
     private void Awake()
     {
-     heartImageList = new List<HeartImage>();
+        heartImageList = new List<HeartImage>();
     }
 
 
@@ -32,9 +33,13 @@ public class HeartHealthVisual : MonoBehaviour
         //call this function to set our hearts
         SetHeartsHealthSystem(heartsHealthSystem);
 
-      //  CreateHeartImage(new Vector2(-360, 0)).SetHeartFragments(2);
-      //  CreateHeartImage(new Vector2(-310, 0)).SetHeartFragments(1);
-      //  CreateHeartImage(new Vector2(-260, 0)).SetHeartFragments(0);
+        //create testing buttons
+     //   CMDebug.ButtonUI(new Vector2(-50, -100),"Damage 1", () => heartsHealthSystem.Damage(1)); //18:14
+     //   CMDebug.ButtonUI(new Vector2(50, -100),"Heal 1",() => heartsHealthSystem.Heal(1));
+        
+        //  CreateHeartImage(new Vector2(-360, 0)).SetHeartFragments(2);
+        //  CreateHeartImage(new Vector2(-310, 0)).SetHeartFragments(1);
+        //  CreateHeartImage(new Vector2(-260, 0)).SetHeartFragments(0);
 
     }
 
@@ -44,7 +49,7 @@ public class HeartHealthVisual : MonoBehaviour
         this.heartsHealthSystem = heartsHealthSystem;
 
         List<HeartHealthSystem.Heart> heartList = heartsHealthSystem.GetHeartList();
-        Vector2 heartAnchoredPosition = new Vector2(-360, 0);
+        Vector2 heartAnchoredPosition = new Vector2(-360, 195);
         for (int i = 0; i < heartList.Count; i++)
         {
             //offset images, everytime you add a heart it will move 50 spaces right
@@ -55,10 +60,47 @@ public class HeartHealthVisual : MonoBehaviour
             //This creates a heart at a certain position then uses GetFragmentAmount to choose which fragment (empty,full,half)
             CreateHeartImage(heartAnchoredPosition).SetHeartFragments(heart.GetFragmentAmount());
             heartAnchoredPosition += new Vector2(50, 0); // issue, all hearts are in the same position
-            
+
         }
+        //suscribe to damaga and healing events + death events
+        heartsHealthSystem.onDamaged += HeartsHealthSystem_OnDamaged;
+        heartsHealthSystem.onHealed += HeartsHealthSystem_OnHealed;
+        heartsHealthSystem.onDead += HeartsHealthSystem_OnDead;
 
     }
+
+    //if you lose all health, print out your dead/ later will create popup
+    private void HeartsHealthSystem_OnDead(object sender, System.EventArgs e)
+    {
+        print("You Dead");
+        
+    }
+    private void HeartsHealthSystem_OnHealed(object sender, System.EventArgs e)
+    {
+        //Hearts health system was healed=
+         RefreshAllHearts();
+    }
+    private void HeartsHealthSystem_OnDamaged(object sender, System.EventArgs e)
+    {
+        //Hearts health system was damaged
+          RefreshAllHearts();
+  
+    }
+
+    private void RefreshAllHearts()
+    {
+        List<HeartHealthSystem.Heart> heartList = heartsHealthSystem.GetHeartList();
+        //cycle through hearts and "refresh them"
+        for (int i = 0; i < heartImageList.Count; i++)
+        {
+            HeartImage heartImage = heartImageList[i];
+            HeartHealthSystem.Heart heart = heartList[i];
+            heartImage.SetHeartFragments(heart.GetFragmentAmount());
+        }
+    }
+
+
+
 
     //Function to create heart images and returns them
     //Vector is to choose heart positions on screen
@@ -83,13 +125,13 @@ public class HeartHealthVisual : MonoBehaviour
         HeartImage heartImage = new HeartImage(this, heartImageUI);
         heartImageList.Add(heartImage);
 
-        
+
         return heartImage;
 
     }
 
     //represents a single heart
-    
+
     public class HeartImage
     {
         private int fragments; //maybe remove
@@ -104,7 +146,7 @@ public class HeartHealthVisual : MonoBehaviour
 
         //sets the "fragments"; half heart, full heart, empty heart
         public void SetHeartFragments(int fragments)
-            
+
         {
             this.fragments = fragments; //maybe remove
             switch (fragments)
@@ -118,8 +160,9 @@ public class HeartHealthVisual : MonoBehaviour
 
 
     }
-    
+
 }
+
     
 
 
