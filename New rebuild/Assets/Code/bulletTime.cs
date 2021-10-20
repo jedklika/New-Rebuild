@@ -41,18 +41,6 @@ public class bulletTime : MonoBehaviour
             switchDelay = 5;
             startDelayTime = switchDelay;
         }
-        //if(WS.gun != 1 && Input.GetKeyDown(KeyCode.Alpha2) || WS.gun != 1 && Input.GetKeyDown(KeyCode.Alpha3))
-        // {
-        //     Destroy(gameObject);
-        // }
-        // if (WS.gun != 2 && Input.GetKeyDown(KeyCode.Alpha1) || WS.gun != 2 && Input.GetKeyDown(KeyCode.Alpha3))
-        // {
-        //     Destroy(gameObject);
-        // }
-        // if (WS.gun != 3 && Input.GetKeyDown(KeyCode.Alpha1) || WS.gun != 3 && Input.GetKeyDown(KeyCode.Alpha2))
-        // {
-        //     Destroy(gameObject);
-        // }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

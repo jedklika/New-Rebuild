@@ -18,6 +18,12 @@ public class HeartHealthVisual : MonoBehaviour
     private List<HeartImage> heartImageList;
     //store hearts in SetHeartsHealthSystem
     private HeartHealthSystem heartsHealthSystem;
+    public Image Heart1;
+    public Image Heart2;
+    public Image Heart3;
+    public Sprite FullHeart;
+    public Sprite HalfHeart;
+    public Sprite EmptyHeart;
 
     //heart image created here
     private void Awake()
