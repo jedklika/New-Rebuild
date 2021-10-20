@@ -40,6 +40,8 @@ public class EnemyAI : MonoBehaviour
     public float enemyStoppingDistance = 1.5f;
     public float enemyRadius = 3f;
 
+    public int health;
+
 
     // Start is called before the first frame update
     void Start()
