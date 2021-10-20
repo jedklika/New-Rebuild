@@ -27,7 +27,7 @@ public class HeartHealthSystem
 
         for(int i = 0; i < heartAmount; i++){
             // all hearts start at full health (2)
-            Heart heart = new Heart(2);
+            Heart heart = new Heart(3);
             heartList.Add(heart);
         }
 
