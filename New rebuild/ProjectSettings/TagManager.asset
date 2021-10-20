@@ -10,6 +10,7 @@ TagManager:
   - SouthWall
   - WestWall
   - EastWall
+  - Bullet
   layers:
   - Default
   - TransparentFX
