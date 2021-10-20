@@ -34,10 +34,12 @@ public class HeartHealthVisual : MonoBehaviour
         //call this function to set our hearts
         SetHeartsHealthSystem(heartsHealthSystem);
 
-        //create testing buttons
-     //   CMDebug.ButtonUI(new Vector2(-50, -100),"Damage 1", () => heartsHealthSystem.Damage(1)); //18:14
-     //   CMDebug.ButtonUI(new Vector2(50, -100),"Heal 1",() => heartsHealthSystem.Heal(1));
         
+
+        //create testing buttons
+        //   CMDebug.ButtonUI(new Vector2(-50, -100),"Damage 1", () => heartsHealthSystem.Damage(1)); //18:14
+        //   CMDebug.ButtonUI(new Vector2(50, -100),"Heal 1",() => heartsHealthSystem.Heal(1));
+
         //  CreateHeartImage(new Vector2(-360, 0)).SetHeartFragments(2);
         //  CreateHeartImage(new Vector2(-310, 0)).SetHeartFragments(1);
         //  CreateHeartImage(new Vector2(-260, 0)).SetHeartFragments(0);
@@ -105,6 +107,7 @@ public class HeartHealthVisual : MonoBehaviour
     public void DamageKnockback(int damageAmount)
     {
         //transform.position += knockbackDir * knockbackDistance;
+
         HeartHealthVisual.heartsHealthSystemStatic.Damage(damageAmount);
     }
 

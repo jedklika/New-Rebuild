@@ -6,7 +6,7 @@ using UnityEngine;
 public class HeartHealthSystem
 {
 
-    public const int MAX_FRAGMENT_AMOUNT = 4;
+    public const int MAX_FRAGMENT_AMOUNT = 2;
     
     //event triggered when health system takes damage
     public event EventHandler onDamaged;
