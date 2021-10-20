@@ -27,11 +27,11 @@ public class HeartHealthSystem
 
         for(int i = 0; i < heartAmount; i++){
             // all hearts start at full health (2)
-            Heart heart = new Heart(3);
+            Heart heart = new Heart(2);
             heartList.Add(heart);
         }
 
-        heartList[heartList.Count - 1].SetFragments(0);
+        //heartList[heartList.Count - 1].SetFragments(0); //?? starts off hearts with -1
     }
     public List<Heart> GetHeartList() {
         return heartList;
@@ -67,6 +67,7 @@ public class HeartHealthSystem
         }
     }
 
+ 
     public void Heal(int healAmount)
     {
         for (int i = 0; i < heartList.Count; i++)

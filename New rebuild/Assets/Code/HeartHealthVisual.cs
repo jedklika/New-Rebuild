@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class HeartHealthVisual : MonoBehaviour
 {
 
+    public static HeartHealthSystem heartsHealthSystemStatic; // for damage test
     //serialized field makes variable private but i can still view in editor
     [SerializeField] private Sprite heart0Sprite;
     [SerializeField] private Sprite heart1Sprite;
@@ -47,9 +48,10 @@ public class HeartHealthVisual : MonoBehaviour
     public void SetHeartsHealthSystem(HeartHealthSystem heartsHealthSystem)
     {
         this.heartsHealthSystem = heartsHealthSystem;
+        heartsHealthSystemStatic = heartsHealthSystem; //for damage test
 
         List<HeartHealthSystem.Heart> heartList = heartsHealthSystem.GetHeartList();
-        Vector2 heartAnchoredPosition = new Vector2(-360, 195);
+        Vector2 heartAnchoredPosition = new Vector2(-360,150);
         for (int i = 0; i < heartList.Count; i++)
         {
             //offset images, everytime you add a heart it will move 50 spaces right
@@ -59,7 +61,7 @@ public class HeartHealthVisual : MonoBehaviour
             //fragments based on hearts
             //This creates a heart at a certain position then uses GetFragmentAmount to choose which fragment (empty,full,half)
             CreateHeartImage(heartAnchoredPosition).SetHeartFragments(heart.GetFragmentAmount());
-            heartAnchoredPosition += new Vector2(50, 0); // issue, all hearts are in the same position
+            heartAnchoredPosition += new Vector2(40, 0); // issue, all hearts are in the same position
 
         }
         //suscribe to damaga and healing events + death events
@@ -99,7 +101,12 @@ public class HeartHealthVisual : MonoBehaviour
         }
     }
 
-
+    //damage for damageTest
+    public void DamageKnockback(int damageAmount)
+    {
+        //transform.position += knockbackDir * knockbackDistance;
+        HeartHealthVisual.heartsHealthSystemStatic.Damage(damageAmount);
+    }
 
 
     //Function to create heart images and returns them
@@ -115,7 +122,7 @@ public class HeartHealthVisual : MonoBehaviour
 
         // location for hearts, sets size of hearts
         heartGameObject.GetComponent<RectTransform>().anchoredPosition = anchoredPosition;
-        heartGameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(150, 150);
+        heartGameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(35, 35);
 
         //set heart sprite
         Image heartImageUI = heartGameObject.GetComponent<Image>();
