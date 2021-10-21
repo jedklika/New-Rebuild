@@ -11,6 +11,9 @@ TagManager:
   - WestWall
   - EastWall
   - Bullet
+  - PistolRound
+  - ShotGunRound
+  - RilfeRound
   layers:
   - Default
   - TransparentFX

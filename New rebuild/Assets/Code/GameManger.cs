@@ -7,7 +7,8 @@ using UnityEngine.UI;
 public class GameManger : MonoBehaviour
 {
     public float playerHealth;
-    public float damage;
+    public float Playerdamage;
+    public float EnemyDamage;
     public int pistolLevel;
     public int shotgunLevel;
     public int rifleLevel;
@@ -50,7 +51,7 @@ public class GameManger : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.H) && playerHealth > 0)
         {
-            playerHealth -= damage;
+            playerHealth -= EnemyDamage;
         }
         if (Input.GetKeyDown(KeyCode.G) && playerHealth < 3)
         {

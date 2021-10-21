@@ -153,7 +153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: 3
-  damage: 0.5
+  Playerdamage: 0
+  EnemyDamage: 0
   pistolLevel: 0
   shotgunLevel: 0
   rifleLevel: 0
@@ -734,7 +735,7 @@ MonoBehaviour:
   speed: 3.5
   enemyStoppingDistance: 1.5
   enemyRadius: 6
-  health: 0
+  health: 4
 --- !u!212 &734224281
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -811,7 +812,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1945,6 +1946,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 394398334257840064, guid: 677ab6700daef8e4d90fb960f2c398d8, type: 3}
+      propertyPath: damage
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 394398334257840066, guid: 677ab6700daef8e4d90fb960f2c398d8, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1993,6 +1998,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -4937270976647235898, guid: addda5ac251bccc45ad3341d17c8e244, type: 3}
+    - target: {fileID: 394398334257840068, guid: 677ab6700daef8e4d90fb960f2c398d8, type: 3}
+      propertyPath: RifleRound
+      value: 
+      objectReference: {fileID: 6076057677604500748, guid: 53000fb8fd9fdda449db4b62fac0f84c, type: 3}
+    - target: {fileID: 394398334257840068, guid: 677ab6700daef8e4d90fb960f2c398d8, type: 3}
+      propertyPath: ShotgunSlug
+      value: 
+      objectReference: {fileID: 337424321893880829, guid: 00ac56a3496f9be4ca9295df25c6da2e, type: 3}
     - target: {fileID: 394398334257840070, guid: 677ab6700daef8e4d90fb960f2c398d8, type: 3}
       propertyPath: m_Name
       value: Player
