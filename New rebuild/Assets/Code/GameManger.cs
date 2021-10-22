@@ -27,7 +27,8 @@ public class GameManger : MonoBehaviour
     public Text MedKit;
     public bool CanPickUpHealth;
     public Text PickUp;
-    PickUp Destory;
+    Item Object;
+    public Text Weapon;
 
     // Start is called before the first frame update
     void Start()
@@ -44,7 +45,8 @@ public class GameManger : MonoBehaviour
         MedKit.text = "Current Medkits: " + healthKits.ToString();
         CanPickUpHealth = false;
         PickUp.enabled = false;
-        
+        Object = FindObjectOfType<Item>();
+        Weapon.text = "Pistol";
     }
 
     // Update is called once per frame

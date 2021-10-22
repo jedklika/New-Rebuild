@@ -29,6 +29,7 @@ public class WeaponSwitch : MonoBehaviour
                 GunType.timeBtwAttack = 1;
                 GM.Playerdamage = 1;
                 gun = 1;
+                GM.Weapon.text = "Pistol"; 
             }
             else if (Input.GetKeyDown(KeyCode.Alpha2) && gun != 2)
             {
@@ -37,6 +38,7 @@ public class WeaponSwitch : MonoBehaviour
                 GunType.timeBtwAttack = 3;
                 GM.Playerdamage = 2;
                 gun = 2;
+                GM.Weapon.text = "Shotgun";
             }
             else if (Input.GetKeyDown(KeyCode.Alpha3) && gun != 3)
             {
@@ -45,6 +47,7 @@ public class WeaponSwitch : MonoBehaviour
                 GunType.timeBtwAttack = .5f;
                 gun = 3;
                 GM.Playerdamage = 1.5f;
+                GM.Weapon.text = "Rifle";
             }
         }
 

@@ -55,6 +55,7 @@ public class PlayerMovement : MonoBehaviour
         {
             speed = 10;
         }
+        
     }
     void TakeDamage(float damage)
     {
@@ -85,6 +86,7 @@ public class PlayerMovement : MonoBehaviour
         {
             GM.CanPickUpHealth = false;
             GM.PickUp.enabled = false;
+
         }
     }
 }
