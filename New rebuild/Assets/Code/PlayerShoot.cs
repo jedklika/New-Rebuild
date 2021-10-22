@@ -6,6 +6,8 @@ public class PlayerShoot : MonoBehaviour
 
 {
     public GameObject bullet; // bullet thing will have forward movement in its seperate script
+    public GameObject ShotgunSlug;
+    public GameObject RifleRound;
     public float bulletSpeed;
     Vector3 myScreenPos;  // screen position of player
     public float timeBtwAttack;
@@ -21,20 +23,25 @@ public class PlayerShoot : MonoBehaviour
     {
         if(Time.time > startTimeBtwAttack)
         {
-            if (Input.GetMouseButtonDown(0) && WS.gun != 3)
+            if (Input.GetMouseButtonDown(0) && WS.gun == 1)
             {
                 GameObject bulletShoot = (GameObject)Instantiate(bullet, transform.position, Quaternion.identity);
                 Vector3 direction = (Input.mousePosition - myScreenPos).normalized;
                 bulletShoot.GetComponent<Rigidbody2D>().velocity = new Vector2(direction.x, direction.y) * bulletSpeed;
-                WS.CanSwitch = false;
                 startTimeBtwAttack = Time.time + timeBtwAttack;
             }
-            else if(Input.GetMouseButton(0) && WS.gun == 3)
+            if (Input.GetMouseButtonDown(0) && WS.gun == 2)
             {
-                GameObject bulletShoot = (GameObject)Instantiate(bullet, transform.position, Quaternion.identity);
+                GameObject bulletShoot = (GameObject)Instantiate(ShotgunSlug, transform.position, Quaternion.identity);
                 Vector3 direction = (Input.mousePosition - myScreenPos).normalized;
                 bulletShoot.GetComponent<Rigidbody2D>().velocity = new Vector2(direction.x, direction.y) * bulletSpeed;
-                WS.CanSwitch = false;
+                startTimeBtwAttack = Time.time + timeBtwAttack;
+            }
+            else if (Input.GetMouseButton(0) && WS.gun == 3)
+            {
+                GameObject bulletShoot = (GameObject)Instantiate(RifleRound, transform.position, Quaternion.identity);
+                Vector3 direction = (Input.mousePosition - myScreenPos).normalized;
+                bulletShoot.GetComponent<Rigidbody2D>().velocity = new Vector2(direction.x, direction.y) * bulletSpeed;
                 startTimeBtwAttack = Time.time + timeBtwAttack;
             }
         }

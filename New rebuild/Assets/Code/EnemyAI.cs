@@ -40,7 +40,8 @@ public class EnemyAI : MonoBehaviour
     public float enemyStoppingDistance = 1.5f;
     public float enemyRadius = 3f;
 
-    public int health;
+    public float health;
+    GameManger GM;
 
 
     // Start is called before the first frame update
@@ -49,6 +50,7 @@ public class EnemyAI : MonoBehaviour
         current = Random.Range(0, moveSpots.Length);
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         SR = GetComponent<SpriteRenderer>();
+        GM = FindObjectOfType<GameManger>();
     }
 
     // Update is called once per frame
@@ -93,10 +95,23 @@ public class EnemyAI : MonoBehaviour
                 // transform.position = Vector2.MoveTowards(transform.position, randomRoamingTarget, speed * Time.deltaTime);
                 break;
         }
+        if(health <= 0)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "ShotGunRound")
+        {
+            TakeDamage(GM.Playerdamage);
+        }
     }
 
-   
-  
     /*
     void setRandom(Transform [] arr)
     {
@@ -111,6 +126,6 @@ public class EnemyAI : MonoBehaviour
     }
 
     */
-    
-  
+
+
 }

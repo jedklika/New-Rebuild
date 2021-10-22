@@ -7,7 +7,8 @@ using UnityEngine.UI;
 public class GameManger : MonoBehaviour
 {
     public float playerHealth;
-    public float damage;
+    public float Playerdamage;
+    public float EnemyDamage;
     public int pistolLevel;
     public int shotgunLevel;
     public int rifleLevel;
@@ -22,6 +23,12 @@ public class GameManger : MonoBehaviour
     PlayerMovement player;
     public Text GameOver;
     public Text Replay;
+    public int healthKits;
+    public Text MedKit;
+    public bool CanPickUpHealth;
+    public Text PickUp;
+    Item Object;
+    public Text Weapon;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +42,11 @@ public class GameManger : MonoBehaviour
         player.enabled = true;
         GameOver.enabled = false;
         Replay.enabled = false;
+        MedKit.text = "Current Medkits: " + healthKits.ToString();
+        CanPickUpHealth = false;
+        PickUp.enabled = false;
+        Object = FindObjectOfType<Item>();
+        Weapon.text = "Pistol";
     }
 
     // Update is called once per frame
@@ -48,13 +60,17 @@ public class GameManger : MonoBehaviour
         {
             SceneManager.LoadScene(0);
         }
-        if (Input.GetKeyDown(KeyCode.H) && playerHealth > 0)
+        if(Input.GetKeyDown(KeyCode.E) && CanPickUpHealth)
         {
-            playerHealth -= damage;
+            healthKits += 1;
+            MedKit.text = "Current Medkits: " + healthKits.ToString();
+            PickUp.enabled = false;
         }
-        if (Input.GetKeyDown(KeyCode.G) && playerHealth < 3)
+        if (Input.GetKeyDown(KeyCode.G) && playerHealth < 3 && healthKits > 0)
         {
             playerHealth += .5f;
+            healthKits -= 1;
+            MedKit.text = "Current Medkits: " + healthKits.ToString();
         }
         switch (playerHealth)
         {
@@ -89,11 +105,15 @@ public class GameManger : MonoBehaviour
                 Heart2.sprite = EmptyHeart;
                 Heart3.sprite = EmptyHeart;
                 isDead = true;
+                Weapon.text = "";
+                MedKit.text = "";
                 StartCoroutine(EndScreen());
                 break;
         }
         IEnumerator EndScreen()
         {
+            Weapon.text = "";
+            MedKit.text = "";
             player.enabled = false;
             yield return new WaitForSeconds(1);
             Gameover.enabled = true;

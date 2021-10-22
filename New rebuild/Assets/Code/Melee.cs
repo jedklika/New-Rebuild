@@ -9,7 +9,7 @@ public class Melee : MonoBehaviour
     public Transform attackPos;
     public LayerMask whatIsEnemies;
     public float attackRange;
-    public int damage;
+    public float damage;
 
     void Update()
     {
@@ -17,7 +17,12 @@ public class Melee : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(1))
             {
-                Debug.Log("melee");
+                Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
+                for (int i = 0; i < enemiesToDamage.Length; i++)
+                {
+                    enemiesToDamage[i].GetComponent<EnemyAI>().TakeDamage(damage);
+
+                }
                 startTimeBtwAttack = Time.time + timeBtwAttack;
             }
         }
