@@ -105,11 +105,15 @@ public class GameManger : MonoBehaviour
                 Heart2.sprite = EmptyHeart;
                 Heart3.sprite = EmptyHeart;
                 isDead = true;
+                Weapon.text = "";
+                MedKit.text = "";
                 StartCoroutine(EndScreen());
                 break;
         }
         IEnumerator EndScreen()
         {
+            Weapon.text = "";
+            MedKit.text = "";
             player.enabled = false;
             yield return new WaitForSeconds(1);
             Gameover.enabled = true;

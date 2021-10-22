@@ -18,5 +18,9 @@ public class StartMenu : MonoBehaviour
         {
             SceneManager.LoadScene(1);
         }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 }
