@@ -2299,6 +2299,10 @@ PrefabInstance:
       propertyPath: ShotgunSlug
       value: 
       objectReference: {fileID: 337424321893880829, guid: 00ac56a3496f9be4ca9295df25c6da2e, type: 3}
+    - target: {fileID: 394398334257840069, guid: 677ab6700daef8e4d90fb960f2c398d8, type: 3}
+      propertyPath: timeBtwAttack
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 394398334257840070, guid: 677ab6700daef8e4d90fb960f2c398d8, type: 3}
       propertyPath: m_Name
       value: Player

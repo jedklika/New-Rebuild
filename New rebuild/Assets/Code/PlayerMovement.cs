@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     private Animator Anim;
     GameManger GM;
     public bool takeDamage;
+    public float timeBtwAttack;
+    public float startTimeBtwAttack;
     // Start is called before the first frame update
     void Start()
     {
@@ -57,20 +59,17 @@ public class PlayerMovement : MonoBehaviour
         }
         
     }
-    void TakeDamage(float damage)
-    {
-        GM.playerHealth -= damage;
-    }
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * Time.fixedDeltaTime);
+        if (Time.time > startTimeBtwAttack && takeDamage)
+        {
+            GM.playerHealth -= GM.EnemyDamage;
+            startTimeBtwAttack = Time.time + timeBtwAttack;
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Enemy")
-        {
-            TakeDamage(GM.EnemyDamage);
-        }
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -79,6 +78,10 @@ public class PlayerMovement : MonoBehaviour
             GM.CanPickUpHealth = true;
             GM.PickUp.enabled = true;
         }
+        if (collision.tag == "Enemy")
+        {
+            takeDamage = true;
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -86,7 +89,10 @@ public class PlayerMovement : MonoBehaviour
         {
             GM.CanPickUpHealth = false;
             GM.PickUp.enabled = false;
-
+        }
+        if (collision.tag == "Enemy")
+        {
+            takeDamage = false;
         }
     }
 }
