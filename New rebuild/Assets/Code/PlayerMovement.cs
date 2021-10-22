@@ -9,12 +9,16 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 movement;
     private SpriteRenderer SR;
     private Animator Anim;
+    GameManger GM;
+    public bool takeDamage;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         SR = GetComponent<SpriteRenderer>();
         Anim = GetComponent<Animator>();
+        GM = FindObjectOfType<GameManger>();
+        takeDamage = false;
     }
 
     // Update is called once per frame
@@ -51,10 +55,36 @@ public class PlayerMovement : MonoBehaviour
         {
             speed = 10;
         }
-
+    }
+    void TakeDamage(float damage)
+    {
+        GM.playerHealth -= damage;
     }
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * Time.fixedDeltaTime);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Enemy")
+        {
+            TakeDamage(GM.EnemyDamage);
+        }
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == "Kit")
+        {
+            GM.CanPickUpHealth = true;
+            GM.PickUp.enabled = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Kit")
+        {
+            GM.CanPickUpHealth = false;
+            GM.PickUp.enabled = false;
+        }
     }
 }

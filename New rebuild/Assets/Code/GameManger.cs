@@ -23,6 +23,11 @@ public class GameManger : MonoBehaviour
     PlayerMovement player;
     public Text GameOver;
     public Text Replay;
+    public int healthKits;
+    public Text MedKit;
+    public bool CanPickUpHealth;
+    public Text PickUp;
+    PickUp Destory;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +41,10 @@ public class GameManger : MonoBehaviour
         player.enabled = true;
         GameOver.enabled = false;
         Replay.enabled = false;
+        MedKit.text = "Current Medkits: " + healthKits.ToString();
+        CanPickUpHealth = false;
+        PickUp.enabled = false;
+        
     }
 
     // Update is called once per frame
@@ -49,13 +58,17 @@ public class GameManger : MonoBehaviour
         {
             SceneManager.LoadScene(0);
         }
-        if (Input.GetKeyDown(KeyCode.H) && playerHealth > 0)
+        if(Input.GetKeyDown(KeyCode.E) && CanPickUpHealth)
         {
-            playerHealth -= EnemyDamage;
+            healthKits += 1;
+            MedKit.text = "Current Medkits: " + healthKits.ToString();
+            PickUp.enabled = false;
         }
-        if (Input.GetKeyDown(KeyCode.G) && playerHealth < 3)
+        if (Input.GetKeyDown(KeyCode.G) && playerHealth < 3 && healthKits > 0)
         {
             playerHealth += .5f;
+            healthKits -= 1;
+            MedKit.text = "Current Medkits: " + healthKits.ToString();
         }
         switch (playerHealth)
         {

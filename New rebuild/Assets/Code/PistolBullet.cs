@@ -16,7 +16,7 @@ public class PistolBullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (collision.tag == "NorthWall" || collision.tag == "SouthWall" || collision.tag == "EastWall" || collision.tag == "WestWall")
+        if (collision.tag == "NorthWall" || collision.tag == "SouthWall" || collision.tag == "EastWall" || collision.tag == "WestWall" || collision.tag == "Enemy")
         {
             GameObject.Destroy(this.gameObject);
           
