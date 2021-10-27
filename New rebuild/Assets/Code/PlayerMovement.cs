@@ -57,7 +57,6 @@ public class PlayerMovement : MonoBehaviour
         {
             speed = 10;
         }
-        
     }
     private void FixedUpdate()
     {
@@ -68,16 +67,8 @@ public class PlayerMovement : MonoBehaviour
             startTimeBtwAttack = Time.time + timeBtwAttack;
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-    }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.tag == "Kit")
-        {
-            GM.CanPickUpHealth = true;
-            GM.PickUp.enabled = true;
-        }
         if (collision.tag == "Enemy")
         {
             takeDamage = true;
@@ -85,11 +76,6 @@ public class PlayerMovement : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Kit")
-        {
-            GM.CanPickUpHealth = false;
-            GM.PickUp.enabled = false;
-        }
         if (collision.tag == "Enemy")
         {
             takeDamage = false;

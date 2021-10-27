@@ -60,6 +60,12 @@ public class GameManger : MonoBehaviour
         {
             SceneManager.LoadScene(0);
         }
+        if (Input.GetKeyDown(KeyCode.G) && playerHealth < 3 && healthKits > 0)
+        {
+            playerHealth += .5f;
+            healthKits -= 1;
+            MedKit.text = "Current Medkits: " + healthKits.ToString();
+        }
         switch (playerHealth)
         {
             case 3:
@@ -111,14 +117,5 @@ public class GameManger : MonoBehaviour
             Replay.enabled = true;
         }
 
-    }
-    void FixedUpdate()
-    {
-        if (Input.GetKeyDown(KeyCode.G) && playerHealth < 3 && healthKits > 0)
-        {
-            playerHealth += .5f;
-            healthKits -= 1;
-            MedKit.text = "Current Medkits: " + healthKits.ToString();
-        }
     }
 }
