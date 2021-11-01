@@ -6,12 +6,17 @@ using UnityEngine.UI;
 
 public class GameManger : MonoBehaviour
 {
+    // health and damage vaules 
     public float playerHealth;
     public float Playerdamage;
     public float EnemyDamage;
+    
+    // weapon levels
     public int pistolLevel;
     public int shotgunLevel;
     public int rifleLevel;
+    
+    // ui imagines 
     public Image Heart1;
     public Image Heart2;
     public Image Heart3;
@@ -19,16 +24,34 @@ public class GameManger : MonoBehaviour
     public Sprite FullHeart;
     public Sprite HalfHeart;
     public Sprite EmptyHeart;
+    
+    // game over calls
     public bool isDead;
     PlayerMovement player;
     public Text GameOver;
     public Text Replay;
+    
+    // health kits
     public int healthKits;
-    public Text MedKit;
+
+    
+    //  bools
     public bool CanPickUpHealth;
+    public bool CanClean;
+    public bool CanRepair;
+    public bool GearedUp;
+    public bool itemFixed;
+    
+    // texts
     public Text PickUp;
-    Item Object;
     public Text Weapon;
+    public Text MedKit;
+
+    // materials 
+    public int metal;
+    public int adhesive;
+    public int tubing;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -44,8 +67,11 @@ public class GameManger : MonoBehaviour
         Replay.enabled = false;
         MedKit.text = "Current Medkits: " + healthKits.ToString();
         CanPickUpHealth = false;
+        CanClean = false;
+        CanRepair = false;
+        GearedUp = false;
+        itemFixed = false;
         PickUp.enabled = false;
-        Object = FindObjectOfType<Item>();
         Weapon.text = "Pistol";
     }
 
@@ -108,6 +134,7 @@ public class GameManger : MonoBehaviour
         {
             Weapon.text = "";
             MedKit.text = "";
+            PickUp.text = "";
             player.enabled = false;
             yield return new WaitForSeconds(1);
             Gameover.enabled = true;
