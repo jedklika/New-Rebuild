@@ -17,6 +17,8 @@ public class Item : MonoBehaviour
     }
     private void Update()
     {
+        //when you press E
+        //add to num of med kits
         if (Input.GetKeyDown(KeyCode.E) && GM.CanPickUpHealth)
         {
             GM.CanPickUpHealth = false;

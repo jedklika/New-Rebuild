@@ -33,12 +33,16 @@ public class GameManger : MonoBehaviour
     public Text Replay;
     public int healthKits; //number of health kits
     public Text MedKit;
+
+
     public bool CanPickUpHealth;
     public bool CanClean;
     public bool CanRepair;
     public bool GearedUp;
     public bool itemFixed;
+
     public Text PickUp;
+
     Item Object;
     public Text Weapon;
     public int metal;
