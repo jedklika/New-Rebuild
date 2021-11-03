@@ -169,6 +169,7 @@ MonoBehaviour:
   GameOver: {fileID: 1966865793}
   Replay: {fileID: 229267334}
   healthKits: 0
+  MedKit: {fileID: 797741898}
   CanPickUpHealth: 0
   CanClean: 0
   CanRepair: 0
@@ -176,10 +177,16 @@ MonoBehaviour:
   itemFixed: 0
   PickUp: {fileID: 891866540}
   Weapon: {fileID: 1638525234}
-  MedKit: {fileID: 797741898}
   metal: 0
   adhesive: 0
   tubing: 0
+  scrapMetalAmount: 0
+  brokenPipeAmount: 0
+  rustyMetalAmount: 0
+  marinePropulsionPartAmount: 0
+  electricMotorPartAmount: 0
+  airCompressionPartAmount: 0
+  steamTurbinePartAmount: 0
 --- !u!4 &46005514
 Transform:
   m_ObjectHideFlags: 0
@@ -1426,7 +1433,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5765150893272052018, guid: 49f9663bf31ca7c40b07a66b639076e5, type: 3}
       propertyPath: m_Name
-      value: Canvas
+      value: Game UI
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49f9663bf31ca7c40b07a66b639076e5, type: 3}
