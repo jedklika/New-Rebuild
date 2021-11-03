@@ -6,29 +6,48 @@ using UnityEngine.UI;
 
 public class GameManger : MonoBehaviour
 {
+    //health and damage variables
     public float playerHealth;
     public float Playerdamage;
     public float EnemyDamage;
+
+    //weapon level 
     public int pistolLevel;
     public int shotgunLevel;
     public int rifleLevel;
+
+    //images + sprites for heart
     public Image Heart1;
     public Image Heart2;
     public Image Heart3;
-    public Image Gameover;
+    public Image Gameover;   //gameover image
     public Sprite FullHeart;
     public Sprite HalfHeart;
     public Sprite EmptyHeart;
+
     public bool isDead;
     PlayerMovement player;
+
+    //game text
     public Text GameOver;
     public Text Replay;
-    public int healthKits;
+    public int healthKits; //number of health kits
     public Text MedKit;
-    public bool CanPickUpHealth;
+    public bool CanPickUpHealth; 
     public Text PickUp;
     Item Object;
     public Text Weapon;
+
+    // values for inventory
+    public int scrapMetalAmount;
+    public int brokenPipeAmount;
+    public int rustyMetalAmount;
+    public int marinePropulsionPartAmount;
+    public int electricMotorPartAmount;
+    public int airCompressionPartAmount;
+    public int steamTurbinePartAmount;
+
+   
 
     // Start is called before the first frame update
     void Start()

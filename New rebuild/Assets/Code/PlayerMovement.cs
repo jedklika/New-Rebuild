@@ -13,8 +13,22 @@ public class PlayerMovement : MonoBehaviour
     public bool takeDamage;
     public float timeBtwAttack;
     public float startTimeBtwAttack;
-    // Start is called before the first frame update
-    void Start()
+
+           //creating a "panel" for inventory
+    public GameObject Panel;
+    // when this is true a canvas will open
+    //Panel.GetComponent<Canvas>()enabled = false;
+
+    public bool inInventory; //inventory tab open
+    public bool OutInventory = true; //inventory tab closed
+                                     //inventory variables 
+
+
+
+
+
+// Start is called before the first frame update
+void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         SR = GetComponent<SpriteRenderer>();
@@ -81,4 +95,23 @@ public class PlayerMovement : MonoBehaviour
             takeDamage = false;
         }
     }
+    // if you press I then Inventory will show up,
+    /*
+          if (Input.GetKeyDown(KeyCode.I)&& OutInventory)
+        {
+            Time.timeScale = 0;
+            OutInventory = false;
+            InInventory = true;
+            Panel.GetComponent<Canvas>().enabled = true;
+        }
+        if (Input.GetKeyDown(KeyCode.E) && InInventory)
+        {
+            Time.timeScale = 1;
+            OutInventory = true;
+            InInventory = false;
+            Panel.GetComponent<Canvas>().enabled = false;
+        }
+     */
+
+
 }
