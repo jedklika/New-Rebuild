@@ -32,15 +32,17 @@ public class GameManger : MonoBehaviour
     public Text GameOver;
     public Text Replay;
     public int healthKits; //number of health kits
-    public Text MedKit;
+    public Text MedKit; 
+    
 
+    // bool statements 
+    public bool CanPickUpHealth; //if true player can pick up health kits
+    public bool CanClean; // if true player can pick up trash
+    public bool CanRepair; //if true player can repair
+    public bool GearedUp; // if true player can repair
+    public bool itemFixed; // if true item is fixed 
 
-    public bool CanPickUpHealth;
-    public bool CanClean;
-    public bool CanRepair;
-    public bool GearedUp;
-    public bool itemFixed;
-
+    //tells player how to pick up items
     public Text PickUp;
 
     Item Object;
@@ -58,7 +60,16 @@ public class GameManger : MonoBehaviour
     public int airCompressionPartAmount;
     public int steamTurbinePartAmount;
 
-   
+    //txt for inventory
+    public Text scrapMetalAmountTxt;
+    public Text brokenPipeAmountTxt;
+    public Text rustyMetalAmountTxt;
+    public Text marinePropulsionPartAmountTxt;
+    public Text electricMotorPartAmountTxt;
+    public Text airCompressionPartAmountTxt;
+    public Text steamTurbinePartAmountTxt;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -94,7 +105,7 @@ public class GameManger : MonoBehaviour
         {
             playerHealth += .5f;
             healthKits -= 1;
-            MedKit.text = "Current Medkits: " + healthKits.ToString();
+            MedKit.text = "Current Medkits: " + healthKits.ToString() ;
         }
         switch (playerHealth)
         {

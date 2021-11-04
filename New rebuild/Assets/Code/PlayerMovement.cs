@@ -14,14 +14,13 @@ public class PlayerMovement : MonoBehaviour
     public float timeBtwAttack;
     public float startTimeBtwAttack;
 
-           //creating a "panel" for inventory
+    //creating a "panel" object for inventory
     public GameObject Panel;
-    // when this is true a canvas will open
-    //Panel.GetComponent<Canvas>()enabled = false;
 
+    //inventory variables 
     public bool inInventory; //inventory tab open
-    public bool OutInventory = true; //inventory tab closed
-                                     //inventory variables 
+    public bool outInventory = true; //inventory tab closed
+                                    
 
 
 
@@ -35,6 +34,11 @@ void Start()
         Anim = GetComponent<Animator>();
         GM = FindObjectOfType<GameManger>();
         takeDamage = false;
+
+        //creates an inventory panel
+        //when this is true the inventory panel opens
+        Panel.GetComponent<GameObject>().SetActive(false);
+       
     }
 
     // Update is called once per frame
@@ -71,7 +75,26 @@ void Start()
         {
             speed = 10;
         }
+
+
+        // if you press I then Inventory will show up,
+
+        if (Input.GetKeyDown(KeyCode.I) && outInventory)
+        {
+            Time.timeScale = 0;
+            outInventory = false;
+            inInventory = true;
+            Panel.GetComponent<Canvas>().enabled = true;
+        }
+        if (Input.GetKeyDown(KeyCode.A) && inInventory)
+        {
+            Time.timeScale = 1;
+            outInventory = true;
+            inInventory = false;
+            Panel.GetComponent<Canvas>().enabled = false;
+        }
     }
+
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * Time.fixedDeltaTime);
@@ -95,23 +118,8 @@ void Start()
             takeDamage = false;
         }
     }
-    // if you press I then Inventory will show up,
-    /*
-          if (Input.GetKeyDown(KeyCode.I)&& OutInventory)
-        {
-            Time.timeScale = 0;
-            OutInventory = false;
-            InInventory = true;
-            Panel.GetComponent<Canvas>().enabled = true;
-        }
-        if (Input.GetKeyDown(KeyCode.E) && InInventory)
-        {
-            Time.timeScale = 1;
-            OutInventory = true;
-            InInventory = false;
-            Panel.GetComponent<Canvas>().enabled = false;
-        }
-     */
+
+     
 
 
 }
