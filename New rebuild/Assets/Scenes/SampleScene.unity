@@ -187,41 +187,6 @@ MonoBehaviour:
   electricMotorPartAmount: 0
   airCompressionPartAmount: 0
   steamTurbinePartAmount: 0
-  smallHealthKitAmount: 0
-  mediumHealthKitAmount: 0
-  bigHealthKitAmount: 0
-  scrapMetalAmountTxt: {fileID: 0}
-  brokenPipeAmountTxt: {fileID: 0}
-  rustyMetalAmountTxt: {fileID: 0}
-  marinePropulsionPartAmountTxt: {fileID: 0}
-  electricMotorPartAmountTxt: {fileID: 0}
-  airCompressionPartAmountTxt: {fileID: 0}
-  steamTurbinePartAmountTxt: {fileID: 0}
-  smallHealthKitTxt: {fileID: 0}
-  mediumHealthKitTxt: {fileID: 0}
-  bigHealthKitTxt: {fileID: 0}
-  scrapMetal: {fileID: 0}
-  brokenPipe: {fileID: 0}
-  rustyMetal: {fileID: 0}
-  marinePropulsionPart: {fileID: 0}
-  electricMotorPart: {fileID: 0}
-  airCompressionPart: {fileID: 0}
-  steamTurbinePart: {fileID: 0}
-  smallHealthKit: {fileID: 0}
-  mediumHealthKit: {fileID: 0}
-  bigHealthKit: {fileID: 0}
-  testMachineRepaired: 0
-  dieselEngineRepaired: 0
-  airCompressorRepaired: 0
-  steamTurbineRepaired: 0
-  marinePropulsionRepaired: 0
-  electricMotorRepaired: 0
-  canRepairTestMachine: 0
-  canRepairDieselEngine: 0
-  canRepairAirCompressor: 0
-  canRepairSteamTurbine: 0
-  canRepairMarinePropulsion: 0
-  canRepairelectricMotor: 0
 --- !u!4 &46005514
 Transform:
   m_ObjectHideFlags: 0
@@ -1933,7 +1898,7 @@ GameObject:
   - component: {fileID: 1578913097}
   m_Layer: 0
   m_Name: Trash
-  m_TagString: BasicScraps
+  m_TagString: Trash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2747,20 +2712,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.51}
   m_EdgeRadius: 0
---- !u!114 &394398336138102546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 394398336138102544}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4eeaa1a0ede78a14ba73f67dd96bcca8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Colliderobject: {fileID: 0}
-  Repair: {fileID: 0}
 --- !u!114 &394398336138102553
 MonoBehaviour:
   m_ObjectHideFlags: 0
