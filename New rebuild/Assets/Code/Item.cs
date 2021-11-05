@@ -27,6 +27,8 @@ public class Item : MonoBehaviour
             Destroy(Colliderobject);
             Colliderobject = null;
         }
+
+        //when you pickup clean up items, adds metal, adhesive, tubing
         if ((Input.GetKeyDown(KeyCode.E) && GM.CanClean))
         {
             GM.CanClean = false;

@@ -60,7 +60,7 @@ public class GameManger : MonoBehaviour
     public int airCompressionPartAmount;
     public int steamTurbinePartAmount;
 
-    //txt for inventory
+    //txt for inventory amount
     public Text scrapMetalAmountTxt;
     public Text brokenPipeAmountTxt;
     public Text rustyMetalAmountTxt;
@@ -68,6 +68,14 @@ public class GameManger : MonoBehaviour
     public Text electricMotorPartAmountTxt;
     public Text airCompressionPartAmountTxt;
     public Text steamTurbinePartAmountTxt;
+
+    public Image scrapMetal;
+    public Image brokenPipe;
+    public Image rustyMetal;
+    public Image marinePropulsionPart;
+    public Image electricMotorPart;
+    public Image airCompressionPart;
+    public Image steamTurbinePart;
 
 
 
@@ -101,6 +109,7 @@ public class GameManger : MonoBehaviour
         {
             SceneManager.LoadScene(0);
         }
+        //press G, if you have health kits, less than 3 hearts, health will increase
         if (Input.GetKeyDown(KeyCode.G) && playerHealth < 3 && healthKits > 0)
         {
             playerHealth += .5f;

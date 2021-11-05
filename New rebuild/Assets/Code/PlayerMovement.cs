@@ -37,7 +37,8 @@ void Start()
 
         //creates an inventory panel
         //when this is true the inventory panel opens
-        Panel.GetComponent<GameObject>().SetActive(false);
+ 
+        Panel.GetComponent<Canvas>().enabled = false;
        
     }
 
@@ -86,7 +87,7 @@ void Start()
             inInventory = true;
             Panel.GetComponent<Canvas>().enabled = true;
         }
-        if (Input.GetKeyDown(KeyCode.A) && inInventory)
+        else if (Input.GetKeyDown(KeyCode.I) && inInventory)
         {
             Time.timeScale = 1;
             outInventory = true;
