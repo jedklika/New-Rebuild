@@ -17,13 +17,7 @@ TagManager:
   - Kit
   - Trash
   - Repair
-  - pipe
-  - Rmetal
-  - Smetal
-  - marProPart
-  - eMotorPart
-  - airComPart
-  - sTurbPart
+  - BasicScraps
   layers:
   - Default
   - TransparentFX

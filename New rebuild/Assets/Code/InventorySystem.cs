@@ -8,9 +8,9 @@ public class InventorySystem : MonoBehaviour
     //calling GameManagerScript
     GameManger GM;
     public GameObject Colliderobject;
-    
-    
-   
+    public SpriteRenderer Repair;
+
+
     private void Start()
     {
         //allows me to use variables from game manager script
@@ -42,174 +42,108 @@ public class InventorySystem : MonoBehaviour
         GM.airCompressionPartAmountTxt.text = "Air Compression Part(s): " + GM.airCompressionPartAmount;
         GM.steamTurbinePartAmountTxt.text = "Steam Turbine Part(s): " + " " + GM.steamTurbinePartAmount;
 
+       //when you click E to clean up you pick up
         if ((Input.GetKeyDown(KeyCode.E) && GM.CanClean))
         {
-            GM.CanClean = false;
-            GM.scrapMetalAmount += 1;
-            Destroy(Colliderobject);
-            Colliderobject = null;
+           GM.CanClean = false;
+            //1 scrap metal, 1 broken pipe, and 3 rusty metal pieces
+           GM.scrapMetalAmount += 1;
+           GM.brokenPipeAmount += 1;
+           GM.rustyMetalAmount += 3; 
+           Destroy(Colliderobject);
+           Colliderobject = null;
         }
+
+        //requirements for a test machine
+        if (GM.scrapMetalAmount == 1 && GM.brokenPipeAmount == 1 && GM.rustyMetalAmount == 3)
+        {
+            GM.canRepairTestMachine = true;
+        }
+        else
+        {
+            GM.canRepairTestMachine = false;
+        }
+
+        //when you repair the test machine remove items from inventory
+        if ((Input.GetKeyDown(KeyCode.E) && GM.canRepairTestMachine && GM.CanRepair))
+        {
+            GM.CanClean = false;
+            GM.scrapMetalAmount -= 1;
+            GM.brokenPipeAmount -= 1;
+            GM.rustyMetalAmount -= 3;
+            Repair = Colliderobject.GetComponent<SpriteRenderer>();
+            Repair.color = Color.yellow;
+            GM.testMachineRepaired = true; //testMachine is repaired
+        }
+        //requirements to build air compressor
+
+
+
+        //requirements to build steam turbine
+
+
+
+        //requirements to build marine propulsion
+
+
+
+        //requirements to build electric motor
+
+
+
+        //requirements to build diesel engine
+
+
 
 
 
 
     }
-    /*private void OnTriggerEnter2D(Collider2D collision)
-    {
-        //try making 2 array lists, one with tag names (String), one with amounts (int)
-        // loop through the list, when i = 0 collission.tag = StringArray[i] and intArray[0] aka GM.scrapMetalAmount + 1;
 
-        if (collision.gameObject.CompareTag("Smetal") && Input.GetKeyDown(KeyCode.E)&& GM.CanClean)
-        {
-            GM.scrapMetalAmount += 1;
-            GM.CanClean = false;
-            Destroy(Colliderobject);
-            Colliderobject = null;
-        }
-        if (collision.tag == "Rmetal" && Input.GetKeyDown(KeyCode.E) && GM.CanClean)
-        {
-            GM.rustyMetalAmount += 1;
-            GM.CanClean = false;
-            Destroy(Colliderobject);
-            Colliderobject = null;
-        }
-        if (collision.tag == "pipe" && Input.GetKeyDown(KeyCode.E) && GM.CanClean)
-        {
-            GM.brokenPipeAmount += 1;
-            GM.CanClean = false;
-            Destroy(Colliderobject);
-            Colliderobject = null;
-        }
-        if (collision.gameObject.CompareTag("marProPart"))
-        {
-
-        }
-        if (collision.gameObject.CompareTag("eMotorPart"))
-        {
-
-        }
-        if (collision.gameObject.CompareTag("airComPart"))
-        {
-
-        }
-        if (collision.gameObject.CompareTag("sTurbPart"))
-        {
-
-        }
-    }*/
     private void OnTriggerStay2D(Collider2D collision)
     {
-        //When player encounter any of these items, message click E to clean
-        // enables "can clean" and "can pickup" so the player can pick up said items
-        //
-        if (collision.tag == "Smetal")
+
+        if (collision.tag == "BasicScraps")
         {
             GM.CanClean = true;
             GM.PickUp.enabled = true;
             GM.PickUp.text = "Press E to clean";
             Colliderobject = collision.gameObject;
         }
-        //
-        if (collision.tag == "Rmetal")
+        if (collision.tag == "Repair" && GM.canRepairTestMachine) //for testing purposes repair applies to the testing machine, i think we need a tag for each machine we need to repair
         {
-            GM.CanClean = true;
+            GM.CanRepair = true;
             GM.PickUp.enabled = true;
-            GM.PickUp.text = "Press E to clean";
+            GM.PickUp.text = "Press E to Repair";
             Colliderobject = collision.gameObject;
         }
-        //
-        if (collision.tag == "pipe")
+        if (collision.tag == "Repair" && GM.canRepairTestMachine == false && GM.testMachineRepaired == false)
         {
-            GM.CanClean = true;
+            GM.CanRepair = true;
             GM.PickUp.enabled = true;
-            GM.PickUp.text = "Press E to clean";
+            GM.PickUp.text = "Need 1 scrap metal, 1 pipe, 3 rusty metal";
             Colliderobject = collision.gameObject;
         }
-        //
-        if (collision.tag == "marProPart")
-        {
-            GM.CanClean = true;
-            GM.PickUp.enabled = true;
-            GM.PickUp.text = "Press E to clean";
-            Colliderobject = collision.gameObject;
-        }
-        //
-        if (collision.tag == "eMotorPart")
-        {
-            GM.CanClean = true;
-            GM.PickUp.enabled = true;
-            GM.PickUp.text = "Press E to clean";
-            Colliderobject = collision.gameObject;
-        }
-            //
-        if (collision.tag == "airComPart")
-        {
-            GM.CanClean = true;
-            GM.PickUp.enabled = true;
-            GM.PickUp.text = "Press E to clean";
-            Colliderobject = collision.gameObject;
-        }
-            if (collision.tag == "sTurbPart")
-            {
-                GM.CanClean = true;
-                GM.PickUp.enabled = true;
-            GM.PickUp.text = "Press E to clean";
-            Colliderobject = collision.gameObject;
-            }
-        }
+    }
 
 
     //when you aren't touching/near any of the pickup items
     private void OnTriggerExit2D(Collider2D collision)
     {
-        //
-        if (collision.tag == "Smetal")
+ 
+        if (collision.tag == "BasicScraps")
         {
             GM.CanClean = false;
             GM.PickUp.enabled = false;
             Colliderobject = null;
         }
-        //
-        if (collision.tag == "Rmetal")
+        if (collision.tag == "Repair") //test machine for these purposes
         {
-            GM.CanClean = false;
+            GM.CanRepair = false;
             GM.PickUp.enabled = false;
-            Colliderobject = null;
-        }
-        //
-        if (collision.tag == "pipe")
-        {
-            GM.CanClean = false;
-            GM.PickUp.enabled = false;
-            Colliderobject = null;
-        }
-        //
-        if (collision.tag == "marProPart")
-        {
-            GM.CanClean = false;
-            GM.PickUp.enabled = false;
-            Colliderobject = null;
-        }
-        //
-        if (collision.tag == "eMotorPart")
-        {
-            GM.CanClean = false;
-            GM.PickUp.enabled = false;
-            Colliderobject = null;
-        }
-        //
-        if (collision.tag == "airComPart")
-        {
-            GM.CanClean = false;
-            GM.PickUp.enabled = false;
-            Colliderobject = null;
-        }
-        if (collision.tag == "sTurbPart")
-        {
-            GM.CanClean = false;
-            GM.PickUp.enabled = false;
+            GM.PickUp.text = "";
             Colliderobject = null;
         }
     }
-  
+
 }
