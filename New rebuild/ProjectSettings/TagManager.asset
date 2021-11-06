@@ -19,6 +19,15 @@ TagManager:
   - Repair
   - BasicScraps
   - Wall
+  - MarineScraps
+  - ElectricScraps
+  - CompressorScraps
+  - TurbineScraps
+  - DE
+  - AC
+  - ST
+  - MP
+  - EM
   layers:
   - Default
   - TransparentFX

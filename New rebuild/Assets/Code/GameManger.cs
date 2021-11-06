@@ -108,6 +108,13 @@ public class GameManger : MonoBehaviour
     public bool canRepairMarinePropulsion;
     public bool canRepairelectricMotor;
 
+    //bool for cleaning specific scraps
+    public bool canCleanAC;
+    public bool canCleanDE;
+    public bool canCleanST;
+    public bool canCleanMP;
+    public bool canCleanEM;
+
 
     // Start is called before the first frame update
     void Start()

@@ -222,6 +222,11 @@ MonoBehaviour:
   canRepairSteamTurbine: 0
   canRepairMarinePropulsion: 0
   canRepairelectricMotor: 0
+  canCleanAC: 0
+  canCleanDE: 0
+  canCleanST: 0
+  canCleanMP: 0
+  canCleanEM: 0
 --- !u!4 &46005514
 Transform:
   m_ObjectHideFlags: 0
