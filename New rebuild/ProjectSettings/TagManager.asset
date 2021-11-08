@@ -28,6 +28,7 @@ TagManager:
   - ST
   - MP
   - EM
+  - DieselScraps
   layers:
   - Default
   - TransparentFX
