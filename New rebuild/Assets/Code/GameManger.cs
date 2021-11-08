@@ -106,7 +106,7 @@ public class GameManger : MonoBehaviour
     public bool canRepairAirCompressor;
     public bool canRepairSteamTurbine;
     public bool canRepairMarinePropulsion;
-    public bool canRepairelectricMotor;
+    public bool canRepairElectricMotor;
 
     //bool for cleaning specific scraps
     public bool canCleanAC;
