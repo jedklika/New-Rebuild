@@ -39,7 +39,7 @@ public class GameManger : MonoBehaviour
     public bool CanPickUpHealth; //if true player can pick up health kits
     public bool CanClean; // if true player can pick up trash
     public bool CanRepair; //if true player can repair
-    public bool GearedUp; // if true player can repair
+    public bool GearedUp; // if true player has the items necessary to build something
     public bool itemFixed; // if true item is fixed 
 
     //tells player how to pick up items
@@ -51,7 +51,7 @@ public class GameManger : MonoBehaviour
     public int adhesive;
     public int tubing;
 
-    // values for inventory
+    // values for inventory items
     public int scrapMetalAmount;
     public int brokenPipeAmount;
     public int rustyMetalAmount;
@@ -59,8 +59,12 @@ public class GameManger : MonoBehaviour
     public int electricMotorPartAmount;
     public int airCompressionPartAmount;
     public int steamTurbinePartAmount;
+    //health kits for later
+    public int smallHealthKitAmount;
+    public int mediumHealthKitAmount;
+    public int bigHealthKitAmount;
 
-    //txt for inventory
+    //txt for inventory item amount
     public Text scrapMetalAmountTxt;
     public Text brokenPipeAmountTxt;
     public Text rustyMetalAmountTxt;
@@ -68,7 +72,48 @@ public class GameManger : MonoBehaviour
     public Text electricMotorPartAmountTxt;
     public Text airCompressionPartAmountTxt;
     public Text steamTurbinePartAmountTxt;
+    //health kits for later
+    public Text smallHealthKitTxt;
+    public Text mediumHealthKitTxt;
+    public Text bigHealthKitTxt;
 
+    //inventory items images
+    public Image scrapMetal;
+    public Image brokenPipe;
+    public Image rustyMetal;
+    public Image marinePropulsionPart;
+    public Image electricMotorPart;
+    public Image airCompressionPart;
+    public Image steamTurbinePart;
+    //health kits for later
+    public Image smallHealthKit;
+    public Image mediumHealthKit;
+    public Image bigHealthKit;
+
+
+    //rebuilding bool
+    // if a machine has been rebuilt the bool will be true
+    public bool testMachineRepaired;
+    public bool dieselEngineRepaired;
+    public bool airCompressorRepaired;
+    public bool steamTurbineRepaired;
+    public bool marinePropulsionRepaired;
+    public bool electricMotorRepaired;
+
+    // if a machine can be rebuilt bool will be true
+    public bool canRepairTestMachine;
+    public bool canRepairDieselEngine;
+    public bool canRepairAirCompressor;
+    public bool canRepairSteamTurbine;
+    public bool canRepairMarinePropulsion;
+    public bool canRepairElectricMotor;
+
+    //bool for cleaning specific scraps
+    public bool canCleanAC;
+    public bool canCleanDE;
+    public bool canCleanST;
+    public bool canCleanMP;
+    public bool canCleanEM;
 
 
     // Start is called before the first frame update
@@ -101,6 +146,7 @@ public class GameManger : MonoBehaviour
         {
             SceneManager.LoadScene(0);
         }
+        //press G, if you have health kits, less than 3 hearts, health will increase
         if (Input.GetKeyDown(KeyCode.G) && playerHealth < 3 && healthKits > 0)
         {
             playerHealth += .5f;

@@ -17,6 +17,18 @@ TagManager:
   - Kit
   - Trash
   - Repair
+  - BasicScraps
+  - Wall
+  - MarineScraps
+  - ElectricScraps
+  - CompressorScraps
+  - TurbineScraps
+  - DE
+  - AC
+  - ST
+  - MP
+  - EM
+  - DieselScraps
   layers:
   - Default
   - TransparentFX
