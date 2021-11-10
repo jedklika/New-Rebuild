@@ -92,7 +92,7 @@ public class InventorySystem : MonoBehaviour
         {
             GM.canRepairAirCompressor = true;
         }
-        else { GM.canRepairAirCompressor = false; }
+        else GM.canRepairAirCompressor = false; 
 
         //when you repair the air compressor remove items from inventory
         if ((Input.GetKeyDown(KeyCode.E) && GM.canRepairAirCompressor && GM.CanRepair))
@@ -279,7 +279,6 @@ public class InventorySystem : MonoBehaviour
              Colliderobject = collision.gameObject; 
             //cleanPresetStay(collision);
         }
-
         
         if (collision.tag == "MarineScraps") //scrap metal, broken pipe, rusty metal
         {
@@ -307,7 +306,7 @@ public class InventorySystem : MonoBehaviour
          
 
 
-        //triggers for repairable machines
+    //triggers for repairable machines
         //repair test machine triggers
         if (collision.tag == "Repair" && GM.canRepairTestMachine) //for testing purposes repair applies to the testing machine
         {
@@ -323,10 +322,9 @@ public class InventorySystem : MonoBehaviour
             GM.PickUp.text = "Need 1 scrap metal, 1 pipe, 3 rusty metal";
             Colliderobject = collision.gameObject;
         }
-        //repair air comprossor triggers
+        //repair air compressor triggers
         if(collision.tag == "AC" && GM.canRepairAirCompressor)
         {
-            
             GM.CanRepair = true;
             GM.PickUp.enabled = true;
             GM.PickUp.text = "Press E to Repair";
@@ -342,21 +340,66 @@ public class InventorySystem : MonoBehaviour
               
         }
 
-       //
         //repair marine propulsion triggers
+        if (collision.tag == "MP" && GM.canRepairMarinePropulsion)
+        {
+            repairPresetStay(collision);
+        }
+        if (collision.tag == "MP" && GM.canRepairMarinePropulsion == false && GM.marinePropulsionRepaired == false)
+        {
+            GM.CanRepair = true;
+            GM.PickUp.enabled = true;
+            GM.PickUp.text = "Need 1 scrap metal, 1 pipe, 3 rusty metal, 1 marine propulsion part";
+            Colliderobject = collision.gameObject;
 
+        }
 
 
         //repair electric motor triggers
+        if (collision.tag == "EM" && GM.canRepairElectricMotor)
+        {
 
+            repairPresetStay(collision);
+        }
+        if (collision.tag == "EM" && GM.canRepairElectricMotor == false && GM.electricMotorRepaired == false)
+        {
+            GM.CanRepair = true;
+            GM.PickUp.enabled = true;
+            GM.PickUp.text = "Need 1 scrap metal, 1 pipe, 3 rusty metal, 1 electric motor part";
+            Colliderobject = collision.gameObject;
+
+        }
 
 
         //repair turbine scraps triggers
+        if (collision.tag == "ST" && GM.canRepairSteamTurbine)
+        {
+            repairPresetStay(collision);
+        }
+        if (collision.tag == "ST" && GM.canRepairSteamTurbine == false && GM.steamTurbineRepaired == false)
+        {
+            GM.CanRepair = true;
+            GM.PickUp.enabled = true;
+            GM.PickUp.text = "Need 1 scrap metal, 1 pipe, 3 rusty metal, 1 steam turbine part";
+            Colliderobject = collision.gameObject;
 
-
+        }
 
 
         //repair diesel engine triggers
+        if (collision.tag == "DE" && GM.canRepairDieselEngine)
+        {
+
+            repairPresetStay(collision);
+        }
+        if (collision.tag == "DE" && GM.canRepairDieselEngine == false && GM.dieselEngineRepaired == false)
+        {
+            GM.CanRepair = true;
+            GM.PickUp.enabled = true;
+            GM.PickUp.text = "Need 1 scrap metal, 1 pipe, 3 rusty metal, 1 diesel engine part";
+            Colliderobject = collision.gameObject;
+
+        }
     }
 
 
@@ -371,7 +414,6 @@ public class InventorySystem : MonoBehaviour
             GM.PickUp.enabled = false;
             Colliderobject = null;
         }
-
         if (collision.tag == "CompressorScraps") // air compressor (basic scraps + air compressor part)
         {
             GM.canCleanAC = false;
@@ -380,25 +422,22 @@ public class InventorySystem : MonoBehaviour
             Colliderobject = null;*/
             cleanPresetExit();
         }
-
          if (collision.tag == "MarineScraps") //marine propulsion
          {
              GM.canCleanMP = false;
             cleanPresetExit();
         }
-
          if (collision.tag == "ElectricScraps") //elctric motor
          {
              GM.canCleanEM = false;
             cleanPresetExit();
         }
-
          if (collision.tag == "TurbineScraps") // 
          {
              GM.canCleanST = false;
             cleanPresetExit();
         }
-          if (collision.tag == "DieselScraps") // 
+         if (collision.tag == "DieselScraps") // 
          {
              GM.canCleanDE = false;
             cleanPresetExit();
@@ -456,6 +495,7 @@ if (collision.tag == "DE") // diesel engine
     }
 
     //removes repetiveness for triggers
+    //repair triggers
     public void repairPresetStay(Collider2D collision)
     {
         GM.CanRepair = true;
@@ -463,7 +503,6 @@ if (collision.tag == "DE") // diesel engine
         GM.PickUp.text = "Press E to Repair";
         Colliderobject = collision.gameObject;
     }
-
     public void repairPresetExit()
     {
         GM.CanRepair = false;
@@ -471,14 +510,12 @@ if (collision.tag == "DE") // diesel engine
         GM.PickUp.text = "";
         Colliderobject = null;
     }
-
-    //clean triggers work perfectly
+    //clean up triggers
     public void cleanPresetExit()
     {
         GM.PickUp.enabled = false;
         Colliderobject = null;
     }
-
     public void cleanPresetStay(Collider2D collision)
     {
         GM.PickUp.enabled = true;
