@@ -38,9 +38,6 @@ public class GameManger : MonoBehaviour
     // bool statements 
     public bool CanPickUpHealth; //if true player can pick up health kits
     public bool CanClean; // if true player can pick up trash
-    public bool CanRepair; //if true player can repair
-    public bool GearedUp; // if true player has the items necessary to build something
-    public bool itemFixed; // if true item is fixed 
 
     //tells player how to pick up items
     public Text PickUp;
@@ -115,6 +112,13 @@ public class GameManger : MonoBehaviour
     public bool canCleanMP;
     public bool canCleanEM;
 
+    // bools for fixing specific machines
+    public bool CanfixAC;
+    public bool CanFixDE;
+    public bool CanFixST;
+    public bool CanFixMP;
+    public bool CanFixEM;
+
 
     // Start is called before the first frame update
     void Start()
@@ -133,6 +137,11 @@ public class GameManger : MonoBehaviour
         PickUp.enabled = false;
         Object = FindObjectOfType<Item>();
         Weapon.text = "Pistol";
+        CanfixAC = false;
+        CanFixDE = false;
+        CanFixEM = false;
+        CanFixMP = false;
+        CanFixST = false;
     }
 
     // Update is called once per frame
