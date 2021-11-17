@@ -19,6 +19,14 @@ public class Item : MonoBehaviour
     {
         //when you press E
         //add to num of med kits
+        if (Input.GetKeyDown(KeyCode.E) && GM.CanPickUpHealth)
+        {
+            GM.CanPickUpHealth = false;
+            GM.healthKits += 1;
+            GM.MedKit.text = "Current Medkits: " + GM.healthKits.ToString();
+            Destroy(Colliderobject);
+            Colliderobject = null;
+        }
     }
         /*
         //when you pickup clean up items, adds metal, adhesive, tubing
@@ -84,6 +92,12 @@ public class Item : MonoBehaviour
     
     private void OnTriggerExit2D(Collider2D collision)
     {
+        if (collision.tag == "Kit")
+        {
+            GM.CanPickUpHealth = false;
+            GM.PickUp.enabled = false;
+            Colliderobject = null;
+        }
     }
 /*        if (collision.tag == "Trash")
         {

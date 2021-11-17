@@ -9,12 +9,6 @@ public class InventorySystem : MonoBehaviour
     GameManger GM;
     public GameObject Colliderobject;
     public SpriteRenderer Repair;
-    public GameObject AC;
-    public GameObject DE;
-    public GameObject ST;
-    public GameObject MP;
-    public GameObject EM;
-
 
 
     private void Start()
@@ -33,12 +27,6 @@ public class InventorySystem : MonoBehaviour
         GM.airCompressionPartAmount = 0;
         GM.steamTurbinePartAmount = 0;
 
-        AC = GameObject.FindGameObjectWithTag("AC");
-        DE = GameObject.FindGameObjectWithTag("DE");
-        ST = GameObject.FindGameObjectWithTag("ST");
-        MP = GameObject.FindGameObjectWithTag("MP");
-        EM = GameObject.FindGameObjectWithTag("EM");
-
 
     }
 
@@ -54,20 +42,40 @@ public class InventorySystem : MonoBehaviour
         GM.airCompressionPartAmountTxt.text = "Air Compression Part(s): " + GM.airCompressionPartAmount;
         GM.steamTurbinePartAmountTxt.text = "Steam Turbine Part(s): " + " " + GM.steamTurbinePartAmount;
 
-        //testing Repair
-        //when you click E to clean up basic scraps
-
-        if (Input.GetKeyDown(KeyCode.E) && GM.CanPickUpHealth)
+//testing Repair
+       //when you click E to clean up basic scraps
+        if ((Input.GetKeyDown(KeyCode.E) && GM.CanClean))
         {
-            GM.CanPickUpHealth = false;
-            GM.healthKits += 1;
-            GM.MedKit.text = "Current Medkits: " + GM.healthKits.ToString();
-            Destroy(Colliderobject);
-            Colliderobject = null;
+           GM.CanClean = false;
+           //1 scrap metal, 1 broken pipe, and 3 rusty metal pieces
+           GM.scrapMetalAmount += 1;
+           GM.brokenPipeAmount += 1;
+           GM.rustyMetalAmount += 3; 
+           Destroy(Colliderobject);
+           Colliderobject = null;
         }
+        //requirements for a test machine
+        if (GM.scrapMetalAmount >= 1 && GM.brokenPipeAmount >= 1 && GM.rustyMetalAmount >= 3){
+            GM.canRepairTestMachine = true;
+        }
+        else GM.canRepairTestMachine = false;
+        
+
+        //when you repair the test machine remove items from inventory
+        if ((Input.GetKeyDown(KeyCode.E) && GM.canRepairTestMachine && GM.CanRepair))
+        {
+            GM.CanClean = false; 
+            GM.scrapMetalAmount -= 1;
+            GM.brokenPipeAmount -= 1;
+            GM.rustyMetalAmount -= 3;
+            Repair = Colliderobject.GetComponent<SpriteRenderer>();
+            Repair.color = Color.yellow;
+            GM.testMachineRepaired = true; //testMachine is repaired
+        }
+
 //Air compressor repair
         //When you pick up air compressor scraps
-        if ((Input.GetKeyDown(KeyCode.E) && GM.canCleanAC)) 
+        if ((Input.GetKeyDown(KeyCode.E) && GM.canCleanAC )) 
         {
             GM.canCleanAC = false;
             //scrap metal = 1; broken pipe = 1; rusty metal = 3; air compressor part = 1;
@@ -87,16 +95,17 @@ public class InventorySystem : MonoBehaviour
         else GM.canRepairAirCompressor = false; 
 
         //when you repair the air compressor remove items from inventory
-        if ((Input.GetKeyDown(KeyCode.E) && GM.canRepairAirCompressor && GM.CanfixAC))
+        if ((Input.GetKeyDown(KeyCode.E) && GM.canRepairAirCompressor && GM.CanRepair))
         {
-            GM.PickUp.enabled = false;
-            Repair = AC.GetComponent<SpriteRenderer>();
-            Repair.color = Color.yellow;
+
+            //GM.canRepairAirCompressor = false; //delete if it doesn't work
             GM.canCleanAC = false;
             GM.scrapMetalAmount -= 1;
             GM.brokenPipeAmount -= 1;
             GM.rustyMetalAmount -= 3;
             GM.airCompressionPartAmount -= 1;
+            Repair = Colliderobject.GetComponent<SpriteRenderer>();
+            Repair.color = Color.yellow;
             GM.airCompressorRepaired = true; // is repaired
         }
 
@@ -122,15 +131,15 @@ public class InventorySystem : MonoBehaviour
         else GM.canRepairSteamTurbine = false;
         
 
-        if ((Input.GetKeyDown(KeyCode.E) && GM.canRepairSteamTurbine && GM.CanFixST))
+        if ((Input.GetKeyDown(KeyCode.E) && GM.canRepairSteamTurbine && GM.CanRepair))
         {
-            Repair = ST.GetComponent<SpriteRenderer>();
-            Repair.color = Color.yellow;
             GM.canCleanST = false;
             GM.scrapMetalAmount -= 1;
             GM.brokenPipeAmount -= 1;
             GM.rustyMetalAmount -= 3;
             GM.steamTurbinePartAmount -= 1;
+            Repair = Colliderobject.GetComponent<SpriteRenderer>();
+            Repair.color = Color.yellow;
             GM.steamTurbineRepaired = true; // is repaired
         }
         
@@ -159,14 +168,15 @@ public class InventorySystem : MonoBehaviour
             GM.canRepairMarinePropulsion = false;
         }
 
-        if ((Input.GetKeyDown(KeyCode.E) && GM.canRepairMarinePropulsion && GM.CanFixMP))
+        if ((Input.GetKeyDown(KeyCode.E) && GM.canRepairMarinePropulsion && GM.CanRepair))
         {
+
             GM.canCleanMP = false;
             GM.scrapMetalAmount -= 1;
             GM.brokenPipeAmount -= 1;
             GM.rustyMetalAmount -= 3;
             GM.marinePropulsionPartAmount -= 1;
-            Repair = MP.GetComponent<SpriteRenderer>();
+            Repair = Colliderobject.GetComponent<SpriteRenderer>();
             Repair.color = Color.yellow;
             GM.marinePropulsionRepaired = true; // is repaired
         }
@@ -195,15 +205,15 @@ public class InventorySystem : MonoBehaviour
             GM.canRepairElectricMotor = false;
         }
 
-        if ((Input.GetKeyDown(KeyCode.E) && GM.canRepairElectricMotor && GM.CanFixEM))
+        if ((Input.GetKeyDown(KeyCode.E) && GM.canRepairElectricMotor && GM.CanRepair))
         {
-            Repair = EM.GetComponent<SpriteRenderer>();
-            Repair.color = Color.yellow;
             GM.canCleanEM = false;
             GM.scrapMetalAmount -= 1;
             GM.brokenPipeAmount -= 1;
             GM.rustyMetalAmount -= 3;
             GM.electricMotorPartAmount -= 1;
+            Repair = Colliderobject.GetComponent<SpriteRenderer>();
+            Repair.color = Color.yellow;
             GM.electricMotorRepaired = true; // is repaired
         }
 
@@ -212,9 +222,9 @@ public class InventorySystem : MonoBehaviour
         if ((Input.GetKeyDown(KeyCode.E) && GM.canCleanDE))
         {
             GM.canCleanDE = false;
-            GM.scrapMetalAmount += 1;
-            GM.brokenPipeAmount += 1;
-            GM.rustyMetalAmount += 3;
+            GM.scrapMetalAmount -= 1;
+            GM.brokenPipeAmount -= 1;
+            GM.rustyMetalAmount -= 3;
             Destroy(Colliderobject);
             Colliderobject = null;
         }
@@ -229,28 +239,32 @@ public class InventorySystem : MonoBehaviour
                     GM.canRepairDieselEngine = false;
                 }
 
-                if ((Input.GetKeyDown(KeyCode.E) && GM.canRepairDieselEngine && GM.CanFixDE))
+                if ((Input.GetKeyDown(KeyCode.E) && GM.canRepairDieselEngine && GM.CanRepair))
                 {
-                    Repair = DE.GetComponent<SpriteRenderer>();
-                    Repair.color = Color.yellow;
                     GM.CanClean = false;
                     GM.scrapMetalAmount -= 1;
                     GM.brokenPipeAmount -= 1;
                     GM.rustyMetalAmount -= 3;
+                    Repair = Colliderobject.GetComponent<SpriteRenderer>();
+                    Repair.color = Color.yellow;
                     GM.dieselEngineRepaired = true; // is repaired
-                }
+                } 
+
+
+
+
+
     }
 //when you are near or ontop of the scraps or machine you can interact with them
     private void OnTriggerStay2D(Collider2D collision)
     {
-        //triggers for types of mess miles/scraps
+//triggers for types of mess miles/scraps
         //tags: BasicScraps, MarineScraps, ElectricScraps, CompressorScraps, TurbineScraps
-
-        if (collision.tag == "Kit")
+        if (collision.tag == "BasicScraps")
         {
-            GM.CanPickUpHealth = true;
+            GM.CanClean = true;
             GM.PickUp.enabled = true;
-            GM.PickUp.text = "Press E to Pick up health kit";
+            GM.PickUp.text = "Press E to clean";
             Colliderobject = collision.gameObject;
         }
 
@@ -286,9 +300,7 @@ public class InventorySystem : MonoBehaviour
         
         if (collision.tag == "DieselScraps") //scrap metal, broken pipe, rusty metal
         {
-
             GM.canCleanDE = true;
-
             cleanPresetStay(collision);
         }
          
@@ -296,19 +308,32 @@ public class InventorySystem : MonoBehaviour
 
     //triggers for repairable machines
         //repair test machine triggers
-        //repair air compressor triggers
-        if(collision.tag == "AC" && GM.canRepairAirCompressor)
+        if (collision.tag == "Repair" && GM.canRepairTestMachine) //for testing purposes repair applies to the testing machine
         {
-            GM.CanfixAC = true;
+            GM.CanRepair = true;
             GM.PickUp.enabled = true;
             GM.PickUp.text = "Press E to Repair";
             Colliderobject = collision.gameObject;
-            Repair = Colliderobject.GetComponent<SpriteRenderer>();
+        }
+        if (collision.tag == "Repair" && GM.canRepairTestMachine == false && GM.testMachineRepaired == false)
+        {
+            GM.CanRepair = true;
+            GM.PickUp.enabled = true;
+            GM.PickUp.text = "Need 1 scrap metal, 1 pipe, 3 rusty metal";
+            Colliderobject = collision.gameObject;
+        }
+        //repair air compressor triggers
+        if(collision.tag == "AC" && GM.canRepairAirCompressor)
+        {
+            GM.CanRepair = true;
+            GM.PickUp.enabled = true;
+            GM.PickUp.text = "Press E to Repair";
+            Colliderobject = collision.gameObject;
             //repairPresetStay(collision);
         }
         if (collision.tag == "AC" && GM.canRepairAirCompressor == false && GM.airCompressorRepaired == false)
         {
-            GM.CanfixAC = true;
+            GM.CanRepair = true;
             GM.PickUp.enabled = true;
             GM.PickUp.text = "Need 1 scrap metal, 1 pipe, 3 rusty metal, 1 air compressor part";
             Colliderobject = collision.gameObject;
@@ -318,13 +343,11 @@ public class InventorySystem : MonoBehaviour
         //repair marine propulsion triggers
         if (collision.tag == "MP" && GM.canRepairMarinePropulsion)
         {
-
-            GM.CanFixMP = true;
             repairPresetStay(collision);
         }
         if (collision.tag == "MP" && GM.canRepairMarinePropulsion == false && GM.marinePropulsionRepaired == false)
         {
-            GM.CanFixMP = true;
+            GM.CanRepair = true;
             GM.PickUp.enabled = true;
             GM.PickUp.text = "Need 1 scrap metal, 1 pipe, 3 rusty metal, 1 marine propulsion part";
             Colliderobject = collision.gameObject;
@@ -335,12 +358,12 @@ public class InventorySystem : MonoBehaviour
         //repair electric motor triggers
         if (collision.tag == "EM" && GM.canRepairElectricMotor)
         {
-            GM.CanFixEM = true;
+
             repairPresetStay(collision);
         }
         if (collision.tag == "EM" && GM.canRepairElectricMotor == false && GM.electricMotorRepaired == false)
         {
-            GM.CanFixEM = true;
+            GM.CanRepair = true;
             GM.PickUp.enabled = true;
             GM.PickUp.text = "Need 1 scrap metal, 1 pipe, 3 rusty metal, 1 electric motor part";
             Colliderobject = collision.gameObject;
@@ -351,12 +374,11 @@ public class InventorySystem : MonoBehaviour
         //repair turbine scraps triggers
         if (collision.tag == "ST" && GM.canRepairSteamTurbine)
         {
-            GM.CanFixST = true;
             repairPresetStay(collision);
         }
         if (collision.tag == "ST" && GM.canRepairSteamTurbine == false && GM.steamTurbineRepaired == false)
         {
-            GM.CanFixST = true;
+            GM.CanRepair = true;
             GM.PickUp.enabled = true;
             GM.PickUp.text = "Need 1 scrap metal, 1 pipe, 3 rusty metal, 1 steam turbine part";
             Colliderobject = collision.gameObject;
@@ -367,12 +389,12 @@ public class InventorySystem : MonoBehaviour
         //repair diesel engine triggers
         if (collision.tag == "DE" && GM.canRepairDieselEngine)
         {
-            GM.CanFixDE = true;
+
             repairPresetStay(collision);
         }
         if (collision.tag == "DE" && GM.canRepairDieselEngine == false && GM.dieselEngineRepaired == false)
         {
-            GM.CanFixDE = true;
+            GM.CanRepair = true;
             GM.PickUp.enabled = true;
             GM.PickUp.text = "Need 1 scrap metal, 1 pipe, 3 rusty metal, 1 diesel engine part";
             Colliderobject = collision.gameObject;
@@ -384,14 +406,14 @@ public class InventorySystem : MonoBehaviour
 //when you aren't touching/near any of the pickup items you cannot interact with them
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Kit")
+    //exit triggers for different mespiles/scraps
+        //tags: BasicScraps, MarineScraps, ElectricScraps, CompressorScraps, TurbineScraps
+        if (collision.tag == "BasicScraps") //scrap metal, broken pipe, rusty metal
         {
-            GM.CanPickUpHealth = false;
+            GM.CanClean = false;
             GM.PickUp.enabled = false;
             Colliderobject = null;
         }
-        //exit triggers for different mespiles/scraps
-        //tags: BasicScraps, MarineScraps, ElectricScraps, CompressorScraps, TurbineScraps
         if (collision.tag == "CompressorScraps") // air compressor (basic scraps + air compressor part)
         {
             GM.canCleanAC = false;
@@ -424,8 +446,26 @@ public class InventorySystem : MonoBehaviour
          
 
         //exit triggers for repairable machines
-        //tags: DE, AC, ST, MP, EM=
+        //tags: DE, AC, ST, MP, EM
 
+        if (collision.tag == "Repair") //test machine for these purposes
+        {
+            GM.CanRepair = false;
+            GM.canRepairTestMachine = false;
+            GM.PickUp.enabled = false;
+            GM.PickUp.text = "";
+            Colliderobject = null;
+        }
+
+        if (collision.tag == "AC") //air compressor
+{
+            GM.canRepairAirCompressor = false;
+            GM.CanRepair = false;
+            GM.PickUp.enabled = false;
+            GM.PickUp.text = "";
+            Colliderobject = null;
+            //repairPresetExit();
+}
 
 if (collision.tag == "ST") // steam turbine
 {
@@ -458,23 +498,17 @@ if (collision.tag == "DE") // diesel engine
     //repair triggers
     public void repairPresetStay(Collider2D collision)
     {
+        GM.CanRepair = true;
         GM.PickUp.enabled = true;
         GM.PickUp.text = "Press E to Repair";
         Colliderobject = collision.gameObject;
-        Repair = Colliderobject.GetComponent<SpriteRenderer>();
     }
     public void repairPresetExit()
     {
+        GM.CanRepair = false;
         GM.PickUp.enabled = false;
         GM.PickUp.text = "";
         Colliderobject = null;
-        Repair = null;
-        GM.CanPickUpHealth = false;
-        GM.CanfixAC = false;
-        GM.CanFixDE = false;
-        GM.CanFixEM = false;
-        GM.CanFixMP = false;
-        GM.CanFixST = false;
     }
     //clean up triggers
     public void cleanPresetExit()
