@@ -54,6 +54,8 @@ public class InventorySystem : MonoBehaviour
         GM.airCompressionPartAmountTxt.text = "Air Compression Part(s): " + GM.airCompressionPartAmount;
         GM.steamTurbinePartAmountTxt.text = "Steam Turbine Part(s): " + " " + GM.steamTurbinePartAmount;
 
+       
+
         //testing Repair
         //when you click E to clean up basic scraps
 
@@ -98,6 +100,10 @@ public class InventorySystem : MonoBehaviour
             GM.rustyMetalAmount -= 3;
             GM.airCompressionPartAmount -= 1;
             GM.airCompressorRepaired = true; // is repaired
+
+
+
+            
         }
 
 //Steam Turbine Repairs

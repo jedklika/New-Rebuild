@@ -33,6 +33,8 @@ public class GameManger : MonoBehaviour
     public Text Replay;
     public int healthKits; //number of health kits
     public Text MedKit; 
+    public Text Money;
+    public int currency; //amount of money player has
     
 
     // bool statements 
@@ -88,6 +90,8 @@ public class GameManger : MonoBehaviour
     public Image bigHealthKit;
 
 
+
+
     //rebuilding bool
     // if a machine has been rebuilt the bool will be true
     public bool testMachineRepaired;
@@ -133,6 +137,7 @@ public class GameManger : MonoBehaviour
         GameOver.enabled = false;
         Replay.enabled = false;
         MedKit.text = "Current Medkits: " + healthKits.ToString();
+        //Money.text = "Current Money: " + currency.ToString();
         CanPickUpHealth = false;
         PickUp.enabled = false;
         Object = FindObjectOfType<Item>();
@@ -204,6 +209,7 @@ public class GameManger : MonoBehaviour
         {
             Weapon.text = "";
             MedKit.text = "";
+            Money.text = "";
             player.enabled = false;
             yield return new WaitForSeconds(1);
             Gameover.enabled = true;

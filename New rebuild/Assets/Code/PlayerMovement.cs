@@ -20,14 +20,23 @@ public class PlayerMovement : MonoBehaviour
     //inventory variables 
     public bool inInventory; //inventory tab open
     public bool outInventory = true; //inventory tab closed
-                                    
+
+    //creating a panel object for menu/store
+    public GameObject storePanel;
+    //store variables
+    public bool inStore;
+    public bool outStore = true;
 
 
 
 
 
-// Start is called before the first frame update
-void Start()
+
+
+
+
+    // Start is called before the first frame update
+    void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         SR = GetComponent<SpriteRenderer>();
@@ -39,6 +48,7 @@ void Start()
         //when this is true the inventory panel opens
  
         Panel.GetComponent<Canvas>().enabled = false;
+        storePanel.GetComponent<Canvas>().enabled = false;
        
     }
 
@@ -93,6 +103,22 @@ void Start()
             outInventory = true;
             inInventory = false;
             Panel.GetComponent<Canvas>().enabled = false;
+        }
+
+        //if you press M then store menu will show up
+        if (Input.GetKeyDown(KeyCode.M) && outStore)
+        {
+            Time.timeScale = 0;
+            outStore = false;
+            inStore = true;
+            storePanel.GetComponent<Canvas>().enabled = true;
+        }
+        else if (Input.GetKeyDown(KeyCode.M) && inStore)
+        {
+            Time.timeScale = 1;
+            outStore = true;
+            inStore = false;
+            storePanel.GetComponent<Canvas>().enabled = false;
         }
     }
 
