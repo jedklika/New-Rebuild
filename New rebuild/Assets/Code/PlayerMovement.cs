@@ -27,12 +27,11 @@ public class PlayerMovement : MonoBehaviour
     public bool inStore;
     public bool outStore = true;
 
-
-
-
-
-
-
+    //creating a panel object for controls
+    public GameObject controls;
+    //control variables
+    public bool inControls;
+    public bool outControls = true;
 
 
     // Start is called before the first frame update
@@ -46,37 +45,38 @@ public class PlayerMovement : MonoBehaviour
 
         //creates an inventory panel
         //when this is true the inventory panel opens
- 
+
         Panel.GetComponent<Canvas>().enabled = false;
         storePanel.GetComponent<Canvas>().enabled = false;
-       
+        controls.GetComponent<Canvas>().enabled = false;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-            Vector2 moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-            movement = moveInput.normalized * speed;
-            if (Input.GetAxisRaw("Horizontal") == 1)
-            {
-                Anim.SetInteger("KeyInput", 1);
-            }
-            else if (Input.GetAxisRaw("Horizontal") == -1)
-            {
-                Anim.SetInteger("KeyInput", -1);
-            }
-            else if (Input.GetAxisRaw("Vertical") == 1)
-            {
-                Anim.SetInteger("KeyInput", 2);
-            }
-            else if (Input.GetAxisRaw("Vertical") == -1)
-            {
-                Anim.SetInteger("KeyInput", -2);
-            }
-            else
-            {
-                Anim.SetInteger("KeyInput", 0);
-            }
+        Vector2 moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        movement = moveInput.normalized * speed;
+        if (Input.GetAxisRaw("Horizontal") == 1)
+        {
+            Anim.SetInteger("KeyInput", 1);
+        }
+        else if (Input.GetAxisRaw("Horizontal") == -1)
+        {
+            Anim.SetInteger("KeyInput", -1);
+        }
+        else if (Input.GetAxisRaw("Vertical") == 1)
+        {
+            Anim.SetInteger("KeyInput", 2);
+        }
+        else if (Input.GetAxisRaw("Vertical") == -1)
+        {
+            Anim.SetInteger("KeyInput", -2);
+        }
+        else
+        {
+            Anim.SetInteger("KeyInput", 0);
+        }
         if (Input.GetAxisRaw("Horizontal") != 0 && Input.GetAxisRaw("Vertical") != 0)
         {
             speed = 0;
@@ -120,6 +120,22 @@ public class PlayerMovement : MonoBehaviour
             inStore = false;
             storePanel.GetComponent<Canvas>().enabled = false;
         }
+
+        //if press C the controls will show up
+        if (Input.GetKeyDown(KeyCode.C) && outControls)
+        {
+            Time.timeScale = 0;
+            outControls = false;
+            inControls = true;
+            controls.GetComponent<Canvas>().enabled = true;
+        }
+        else if (Input.GetKeyDown(KeyCode.C) && inControls)
+        {
+            Time.timeScale = 1;
+            outControls = true;
+            inControls = false;
+            controls.GetComponent<Canvas>().enabled = false;
+        }
     }
 
     private void FixedUpdate()
@@ -146,7 +162,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-     
+
 
 
 }
