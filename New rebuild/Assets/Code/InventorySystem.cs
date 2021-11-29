@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class InventorySystem : MonoBehaviour
 {
@@ -56,9 +57,12 @@ public class InventorySystem : MonoBehaviour
         GM.electricMotorPartAmountTxt.text = "Electric Motor Part(s): " + GM.electricMotorPartAmount;
         GM.airCompressionPartAmountTxt.text = "Air Compression Part(s): " + GM.airCompressionPartAmount;
         GM.steamTurbinePartAmountTxt.text = "Steam Turbine Part(s): " + " " + GM.steamTurbinePartAmount;
+       
 
         //Give currency amount
         GM.Money.text = "Current Money: " + GM.currency.ToString();
+        //updates store currency as well
+        GM.Money2.text = GM.Money.text;
 
         //testing Repair
         //when you click E to clean up basic scraps

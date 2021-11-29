@@ -35,6 +35,7 @@ public class GameManger : MonoBehaviour
     public int healthKits; //number of health kits
     public Text MedKit; 
     public Text Money;
+    public TextMeshProUGUI Money2;
     public int currency; //amount of money player has
     
 
@@ -161,9 +162,7 @@ public class GameManger : MonoBehaviour
         GameOver.enabled = false;
         Replay.enabled = false;
         MedKit.text = "Current Medkits: " + healthKits.ToString();
-        //currency starts out as 0
-        //currency = 0;
-        //Money.text = "Current Money: " + currency.ToString();
+
 
         CanPickUpHealth = false;
         PickUp.enabled = false;
