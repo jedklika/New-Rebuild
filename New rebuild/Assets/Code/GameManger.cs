@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameManger : MonoBehaviour
 {
@@ -71,7 +72,7 @@ public class GameManger : MonoBehaviour
     public Text electricMotorPartAmountTxt;
     public Text airCompressionPartAmountTxt;
     public Text steamTurbinePartAmountTxt;
-    //health kits for later
+    //health kit text for later
     public Text smallHealthKitTxt;
     public Text mediumHealthKitTxt;
     public Text bigHealthKitTxt;
@@ -84,12 +85,11 @@ public class GameManger : MonoBehaviour
     public Image electricMotorPart;
     public Image airCompressionPart;
     public Image steamTurbinePart;
+
     //health kits for later
     public Image smallHealthKit;
     public Image mediumHealthKit;
     public Image bigHealthKit;
-
-
 
 
     //rebuilding bool
@@ -124,6 +124,30 @@ public class GameManger : MonoBehaviour
     public bool CanFixEM;
 
 
+    //images for store
+    public Image currentPistol;
+    public Image pistol2;
+    public Image pistol3;
+    public Image pistol4;
+    public Image pistol5;
+
+    //variables for store/buttons
+    public int price;
+    public bool bought2;
+    public bool bought3;
+    public bool bought4;
+    public bool bought5;
+    public Button buy2;
+    public Button buy3;
+    public Button buy4;
+    public Button buy5;
+    public TextMeshProUGUI buytier2;
+    public TextMeshProUGUI buytier3;
+    public TextMeshProUGUI buytier4;
+    public TextMeshProUGUI buytier5;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -137,7 +161,10 @@ public class GameManger : MonoBehaviour
         GameOver.enabled = false;
         Replay.enabled = false;
         MedKit.text = "Current Medkits: " + healthKits.ToString();
+        //currency starts out as 0
+        //currency = 0;
         //Money.text = "Current Money: " + currency.ToString();
+
         CanPickUpHealth = false;
         PickUp.enabled = false;
         Object = FindObjectOfType<Item>();

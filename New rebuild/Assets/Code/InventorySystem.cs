@@ -39,6 +39,9 @@ public class InventorySystem : MonoBehaviour
         MP = GameObject.FindGameObjectWithTag("MP");
         EM = GameObject.FindGameObjectWithTag("EM");
 
+        //in the start player starts out with no money
+        GM.currency = 0;
+
 
     }
 
@@ -54,7 +57,8 @@ public class InventorySystem : MonoBehaviour
         GM.airCompressionPartAmountTxt.text = "Air Compression Part(s): " + GM.airCompressionPartAmount;
         GM.steamTurbinePartAmountTxt.text = "Steam Turbine Part(s): " + " " + GM.steamTurbinePartAmount;
 
-       
+        //Give currency amount
+        GM.Money.text = "Current Money: " + GM.currency.ToString();
 
         //testing Repair
         //when you click E to clean up basic scraps
@@ -100,10 +104,11 @@ public class InventorySystem : MonoBehaviour
             GM.rustyMetalAmount -= 3;
             GM.airCompressionPartAmount -= 1;
             GM.airCompressorRepaired = true; // is repaired
+                                           
+            //when you repair you get currency
+            GM.currency += 50;
 
 
-
-            
         }
 
 //Steam Turbine Repairs
@@ -138,6 +143,9 @@ public class InventorySystem : MonoBehaviour
             GM.rustyMetalAmount -= 3;
             GM.steamTurbinePartAmount -= 1;
             GM.steamTurbineRepaired = true; // is repaired
+                                            //when you repair you get currency
+            GM.currency += 50;
+
         }
         
 //marine propulsion repair
@@ -175,6 +183,10 @@ public class InventorySystem : MonoBehaviour
             Repair = MP.GetComponent<SpriteRenderer>();
             Repair.color = Color.yellow;
             GM.marinePropulsionRepaired = true; // is repaired
+
+            //when you repair you get currency
+            GM.currency += 50;
+
         }
 
 //electric motor repair
@@ -211,6 +223,10 @@ public class InventorySystem : MonoBehaviour
             GM.rustyMetalAmount -= 3;
             GM.electricMotorPartAmount -= 1;
             GM.electricMotorRepaired = true; // is repaired
+
+            //when you repair you get currency
+            GM.currency += 50;
+
         }
 
 //diesel engine repair
@@ -244,7 +260,11 @@ public class InventorySystem : MonoBehaviour
                     GM.brokenPipeAmount -= 1;
                     GM.rustyMetalAmount -= 3;
                     GM.dieselEngineRepaired = true; // is repaired
-                }
+
+            //when you repair you get currency
+            GM.currency += 50;
+
+        }
     }
 //when you are near or ontop of the scraps or machine you can interact with them
     private void OnTriggerStay2D(Collider2D collision)
