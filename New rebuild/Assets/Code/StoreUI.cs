@@ -40,8 +40,8 @@ public class StoreUI : MonoBehaviour
         {
             GM.buytier2.text = "Sold";
             GM.bought2 = true;
-            GM.currentPistol = GM.pistol2;
-            GM.currency -= 100;
+            GM.currentPistol.sprite = GM.pistol2;
+            GM.currency = GM.currency - 100;
         }
         else
         {
@@ -55,7 +55,7 @@ public class StoreUI : MonoBehaviour
         {
             GM.buytier3.text = "Sold";
             GM.bought3 = true;
-            GM.currentPistol = GM.pistol3;
+            GM.currentPistolImage = GM.pistol3;
             GM.currency -= 200;
         }
         else
@@ -69,7 +69,7 @@ public class StoreUI : MonoBehaviour
         {
             GM.buytier4.text = "Sold";
             GM.bought4 = true;
-            GM.currentPistol = GM.pistol4;
+            GM.currentPistolImage = GM.pistol4;
             GM.currency -= 300;
         }
         else
@@ -83,7 +83,7 @@ public class StoreUI : MonoBehaviour
         {
             GM.buytier5.text = "Sold";
             GM.bought5 = true;
-            GM.currentPistol = GM.pistol5;
+            GM.currentPistolImage = GM.pistol5;
             GM.currency -= 450;
 
         }

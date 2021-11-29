@@ -125,12 +125,13 @@ public class GameManger : MonoBehaviour
     public bool CanFixEM;
 
 
-    //images for store
+    //images and Sprites for store
     public Image currentPistol;
-    public Image pistol2;
-    public Image pistol3;
-    public Image pistol4;
-    public Image pistol5;
+    public Sprite currentPistolImage;
+    public Sprite pistol2;
+    public Sprite pistol3;
+    public Sprite pistol4;
+    public Sprite pistol5;
 
     //variables for store/buttons
     public int price;
