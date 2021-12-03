@@ -15,6 +15,8 @@ public class StoreUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+
         GM = FindObjectOfType<GameManger>();
 
         GM.buy2.onClick.AddListener(buyTier2);
@@ -34,14 +36,15 @@ public class StoreUI : MonoBehaviour
     public void buyTier2()
     {
 
-        // Debug.Log("Testing Button");
+         Debug.Log("Testing Button");
 
-        if (GM.currency >= 100)
+        if (GM.currency >= 100 && !GM.bought2)
         {
             GM.buytier2.text = "Sold";
             GM.bought2 = true;
             GM.currentPistol.sprite = GM.pistol2;
             GM.currency = GM.currency - 100;
+            
         }
         else
         {
@@ -51,12 +54,13 @@ public class StoreUI : MonoBehaviour
 
     public void buyTier3()
     {
-        if (GM.currency >= 200 && GM.bought2)
+        if (GM.currency >= 200 && GM.bought2 && !GM.bought3 )
         {
             GM.buytier3.text = "Sold";
             GM.bought3 = true;
             GM.currentPistolImage = GM.pistol3;
             GM.currency -= 200;
+            
         }
         else
         {
@@ -65,12 +69,13 @@ public class StoreUI : MonoBehaviour
     }
    public void buyTier4()
     {
-        if (GM.currency >= 300 && GM.bought3)
+        if (GM.currency >= 300 && GM.bought3 && !GM.bought4)
         {
             GM.buytier4.text = "Sold";
             GM.bought4 = true;
             GM.currentPistolImage = GM.pistol4;
             GM.currency -= 300;
+            
         }
         else
         {
@@ -79,12 +84,13 @@ public class StoreUI : MonoBehaviour
     }
     public void buyTier5()
     {
-        if (GM.currency >= 450 && GM.bought4)
+        if (GM.currency >= 450 && GM.bought4 && !GM.bought5)
         {
             GM.buytier5.text = "Sold";
             GM.bought5 = true;
             GM.currentPistolImage = GM.pistol5;
             GM.currency -= 450;
+           
 
         }
         else

@@ -101,7 +101,7 @@ public class InventorySystem : MonoBehaviour
         {
             GM.PickUp.enabled = false;
             Repair = AC.GetComponent<SpriteRenderer>();
-            Repair.color = Color.yellow;
+            Repair.color = Color.white;
             GM.canCleanAC = false;
             GM.scrapMetalAmount -= 1;
             GM.brokenPipeAmount -= 1;
@@ -110,7 +110,7 @@ public class InventorySystem : MonoBehaviour
             GM.airCompressorRepaired = true; // is repaired
                                            
             //when you repair you get currency
-            GM.currency += 50;
+            GM.currency += 90;
 
 
         }
@@ -140,7 +140,7 @@ public class InventorySystem : MonoBehaviour
         if ((Input.GetKeyDown(KeyCode.E) && GM.canRepairSteamTurbine && GM.CanFixST))
         {
             Repair = ST.GetComponent<SpriteRenderer>();
-            Repair.color = Color.yellow;
+            Repair.color = Color.white;
             GM.canCleanST = false;
             GM.scrapMetalAmount -= 1;
             GM.brokenPipeAmount -= 1;
@@ -148,7 +148,7 @@ public class InventorySystem : MonoBehaviour
             GM.steamTurbinePartAmount -= 1;
             GM.steamTurbineRepaired = true; // is repaired
                                             //when you repair you get currency
-            GM.currency += 50;
+            GM.currency += 75;
 
         }
         
@@ -185,11 +185,11 @@ public class InventorySystem : MonoBehaviour
             GM.rustyMetalAmount -= 3;
             GM.marinePropulsionPartAmount -= 1;
             Repair = MP.GetComponent<SpriteRenderer>();
-            Repair.color = Color.yellow;
+            Repair.color = Color.white;
             GM.marinePropulsionRepaired = true; // is repaired
 
             //when you repair you get currency
-            GM.currency += 50;
+            GM.currency += 100;
 
         }
 
@@ -220,7 +220,7 @@ public class InventorySystem : MonoBehaviour
         if ((Input.GetKeyDown(KeyCode.E) && GM.canRepairElectricMotor && GM.CanFixEM))
         {
             Repair = EM.GetComponent<SpriteRenderer>();
-            Repair.color = Color.yellow;
+            Repair.color = Color.white;
             GM.canCleanEM = false;
             GM.scrapMetalAmount -= 1;
             GM.brokenPipeAmount -= 1;
@@ -229,7 +229,7 @@ public class InventorySystem : MonoBehaviour
             GM.electricMotorRepaired = true; // is repaired
 
             //when you repair you get currency
-            GM.currency += 50;
+            GM.currency += 150;
 
         }
 
@@ -258,7 +258,7 @@ public class InventorySystem : MonoBehaviour
                 if ((Input.GetKeyDown(KeyCode.E) && GM.canRepairDieselEngine && GM.CanFixDE))
                 {
                     Repair = DE.GetComponent<SpriteRenderer>();
-                    Repair.color = Color.yellow;
+                    Repair.color = Color.white;
                     GM.CanClean = false;
                     GM.scrapMetalAmount -= 1;
                     GM.brokenPipeAmount -= 1;

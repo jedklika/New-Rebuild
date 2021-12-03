@@ -663,8 +663,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -243, y: 93}
-  m_SizeDelta: {x: 40, y: 40}
+  m_AnchoredPosition: {x: -239, y: 40}
+  m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &117098232
 MonoBehaviour:
@@ -957,8 +957,8 @@ MonoBehaviour:
 
     Repair (E)
 
-    Open
-    inventory (I)
+    Open inventory
+    (I)
 
     Use Health (G)
 
@@ -1174,7 +1174,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 11, y: 175}
+  m_AnchoredPosition: {x: 9, y: 183.23}
   m_SizeDelta: {x: 264.1043, y: 49.0614}
   m_Pivot: {x: 0.5, y: 0.49999982}
 --- !u!114 &189771819
@@ -1253,8 +1253,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 111, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 132.8311, y: -12.5}
+  m_SizeDelta: {x: 161.6622, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &223784360
 MonoBehaviour:
@@ -1278,10 +1278,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -1642,7 +1642,7 @@ GameObject:
   - component: {fileID: 289538573}
   - component: {fileID: 289538572}
   m_Layer: 0
-  m_Name: Trash (2)
+  m_Name: Diesel Scraps 1
   m_TagString: DieselScraps
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1755,8 +1755,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 289538571}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.33, y: -2.77, z: 0}
-  m_LocalScale: {x: 2.8381, y: 2.8841, z: 1}
+  m_LocalPosition: {x: -2.8376, y: -10.12, z: 0}
+  m_LocalScale: {x: 3.4122355, y: 2.8839636, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 34
@@ -2108,8 +2108,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -243, y: -0.0000076293945}
-  m_SizeDelta: {x: 40, y: 40}
+  m_AnchoredPosition: {x: -239, y: -131}
+  m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &326092609
 MonoBehaviour:
@@ -2183,8 +2183,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 111, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 141.1555, y: -12.5}
+  m_SizeDelta: {x: 168.3111, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &338330362
 MonoBehaviour:
@@ -2208,10 +2208,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -2416,7 +2416,7 @@ Transform:
   m_Children:
   - {fileID: 1355406208}
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &391926654
 GameObject:
@@ -2452,8 +2452,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 129.6781, y: 0.7184}
-  m_SizeDelta: {x: 197.3563, y: 28.5632}
+  m_AnchoredPosition: {x: 148.3378, y: -12.859}
+  m_SizeDelta: {x: 194.0319, y: 54.282}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &391926656
 MonoBehaviour:
@@ -2477,10 +2477,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -2532,8 +2532,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -243, y: 139}
-  m_SizeDelta: {x: 40, y: 40}
+  m_AnchoredPosition: {x: -239, y: 127}
+  m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &481020106
 MonoBehaviour:
@@ -3305,7 +3305,7 @@ GameObject:
   - component: {fileID: 667961284}
   - component: {fileID: 667961283}
   m_Layer: 0
-  m_Name: Trash (3)
+  m_Name: Electric Scraps 1
   m_TagString: ElectricScraps
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3418,11 +3418,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 667961282}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.77, y: -7.61, z: 0}
-  m_LocalScale: {x: 2.8381, y: 2.8841, z: 1}
+  m_LocalPosition: {x: 6.6323, y: -8.6493, z: 0}
+  m_LocalScale: {x: 3.5686843, y: 3.3539197, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 35
+  m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &708612428
 GameObject:
@@ -3776,7 +3776,7 @@ GameObject:
   - component: {fileID: 734349365}
   - component: {fileID: 734349364}
   m_Layer: 0
-  m_Name: Trash (4)
+  m_Name: Turbine Scraps 1
   m_TagString: TurbineScraps
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3889,11 +3889,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 734349363}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.7, y: -5.73, z: 0}
-  m_LocalScale: {x: 2.8381, y: 2.8841, z: 1}
+  m_LocalPosition: {x: -9.4973, y: -6.1693, z: 0}
+  m_LocalScale: {x: 2.4203317, y: 2.4142802, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 37
+  m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &797741896
 GameObject:
@@ -4427,7 +4427,7 @@ Transform:
   m_Children:
   - {fileID: 1828542714}
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &980225910
 GameObject:
@@ -4442,7 +4442,7 @@ GameObject:
   - component: {fileID: 980225912}
   - component: {fileID: 980225911}
   m_Layer: 0
-  m_Name: Tech (2)
+  m_Name: Diesel Engine 1
   m_TagString: DE
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4486,7 +4486,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 3, y: 2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -4536,8 +4536,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6431373, g: 0.27274868, b: 0.18823527, a: 1}
+  m_Sprite: {fileID: 21300000, guid: d2ca27ca1d7d99446b9c2947cac2f152, type: 3}
+  m_Color: {r: 0.21960784, g: 0.21960784, b: 0.21960784, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4555,7 +4555,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 980225910}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.04, y: -1.81, z: 0}
+  m_LocalPosition: {x: 5.72, y: 1.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4596,8 +4596,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -243, y: -46}
-  m_SizeDelta: {x: 40, y: 40}
+  m_AnchoredPosition: {x: 40, y: 127.000015}
+  m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &995866712
 MonoBehaviour:
@@ -5263,7 +5263,7 @@ GameObject:
   - component: {fileID: 1129418633}
   - component: {fileID: 1129418632}
   m_Layer: 0
-  m_Name: Trash (1)
+  m_Name: Compressor Scraps 1
   m_TagString: CompressorScraps
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5376,11 +5376,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1129418631}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9, y: -12.63, z: 0}
-  m_LocalScale: {x: 2.8381, y: 2.8841, z: 1}
+  m_LocalPosition: {x: -8.5657, y: -12.2959, z: 0}
+  m_LocalScale: {x: 3.5166895, y: 3.406122, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 31
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1150990620
 GameObject:
@@ -5510,7 +5510,7 @@ Transform:
   m_LocalScale: {x: -11.565137, y: 26.630768, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &1214992243
 GameObject:
@@ -5698,8 +5698,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 111, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 140.8311, y: -4.9996}
+  m_SizeDelta: {x: 173.2977, y: 70.001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1235586765
 MonoBehaviour:
@@ -5723,10 +5723,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -6031,7 +6031,7 @@ Transform:
   m_LocalScale: {x: -9.6054535, y: 3.255595, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &1339861010
 GameObject:
@@ -34874,7 +34874,7 @@ GameObject:
   - component: {fileID: 1364674750}
   - component: {fileID: 1364674749}
   m_Layer: 0
-  m_Name: Tech
+  m_Name: Marine Propulsion 1
   m_TagString: MP
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34918,7 +34918,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 3, y: 2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -34968,8 +34968,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.3773585, g: 0.3773585, b: 0.3773585, a: 1}
+  m_Sprite: {fileID: 21300000, guid: b943532aa59a66d4b97a723119334fc7, type: 3}
+  m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -34987,11 +34987,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1364674748}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.11, y: -13.32, z: 0}
+  m_LocalPosition: {x: 9.64, y: -13.49, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1406824545
 GameObject:
@@ -35203,8 +35203,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 133.9885, y: 2.8736}
-  m_SizeDelta: {x: 205.9769, y: 24.2529}
+  m_AnchoredPosition: {x: 155.6622, y: -13.937}
+  m_SizeDelta: {x: 209.3013, y: 52.127}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1415675863
 MonoBehaviour:
@@ -35228,10 +35228,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -35261,7 +35261,7 @@ GameObject:
   - component: {fileID: 1448586927}
   - component: {fileID: 1448586926}
   m_Layer: 0
-  m_Name: Tech (3)
+  m_Name: Electric Motor 1
   m_TagString: EM
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35305,7 +35305,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 3, y: 2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -35355,8 +35355,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.1886119, g: 0.5660378, b: 0.018689938, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 824bb9a53a946e945970e66c7d519d87, type: 3}
+  m_Color: {r: 0.21960784, g: 0.21960784, b: 0.21960784, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -35378,7 +35378,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 36
+  m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &1458037727 stripped
 RectTransform:
@@ -35450,8 +35450,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -243, y: 46}
-  m_SizeDelta: {x: 40, y: 40}
+  m_AnchoredPosition: {x: -239, y: -44}
+  m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1482367804
 MonoBehaviour:
@@ -35526,8 +35526,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -243, y: -92}
-  m_SizeDelta: {x: 40, y: 40}
+  m_AnchoredPosition: {x: 40, y: 40.000004}
+  m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1498084296
 MonoBehaviour:
@@ -35744,7 +35744,7 @@ GameObject:
   - component: {fileID: 1578913098}
   - component: {fileID: 1578913097}
   m_Layer: 0
-  m_Name: Trash
+  m_Name: Marine Scraps 1
   m_TagString: MarineScraps
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35810,11 +35810,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1578913094}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.91, y: -9.13, z: 0}
-  m_LocalScale: {x: 2.8381, y: 2.8841, z: 1}
+  m_LocalPosition: {x: 4.6147, y: -2.9229, z: 0}
+  m_LocalScale: {x: 4.143342, y: 3.145111, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1578913097
 BoxCollider2D:
@@ -35952,7 +35952,7 @@ GameObject:
   - component: {fileID: 1615909407}
   - component: {fileID: 1615909406}
   m_Layer: 0
-  m_Name: Tech (1)
+  m_Name: Air Compressor 1
   m_TagString: AC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35996,7 +35996,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 3, y: 2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -36046,8 +36046,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6415094, g: 0.19003202, b: 0.19003202, a: 1}
+  m_Sprite: {fileID: 21300000, guid: d2ca27ca1d7d99446b9c2947cac2f152, type: 3}
+  m_Color: {r: 0.21960784, g: 0.21960784, b: 0.21960784, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -36064,13 +36064,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1615909405}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.42, y: -9.01, z: 0}
+  m_LocalRotation: {x: 0.7071068, y: 0.7071068, z: 0, w: 0}
+  m_LocalPosition: {x: -10.66, y: -1.63, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 32
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 29
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 90}
 --- !u!1 &1650882224
 GameObject:
   m_ObjectHideFlags: 0
@@ -36108,8 +36108,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 3, y: -215}
-  m_SizeDelta: {x: 635.4, y: 433}
+  m_AnchoredPosition: {x: 8.8177, y: -232.4532}
+  m_SizeDelta: {x: 647.0355, y: 467.9065}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1650882226
 MonoBehaviour:
@@ -36124,7 +36124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.38679248, g: 0.31527236, b: 0.31527236, a: 1}
+  m_Color: {r: 0.23529412, g: 0.28627452, b: 0.34901962, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -36493,8 +36493,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 130.39651, y: -2.5}
-  m_SizeDelta: {x: 198.793, y: 35}
+  m_AnchoredPosition: {x: 144.8311, y: -5.625}
+  m_SizeDelta: {x: 190.4819, y: 68.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1803933629
 MonoBehaviour:
@@ -36518,10 +36518,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -36668,7 +36668,7 @@ Transform:
   m_LocalScale: {x: 29.979599, y: 4.9240875, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1813159515
 GameObject:
@@ -36711,8 +36711,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -9.000046, y: -30.903528}
-  m_SizeDelta: {x: 590, y: 329.8841}
+  m_AnchoredPosition: {x: 0.9732, y: -28.4102}
+  m_SizeDelta: {x: 609.9466, y: 374.2098}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1813159517
 MonoBehaviour:
@@ -36727,7 +36727,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5849056, g: 0.548487, b: 0.548487, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -42642,8 +42642,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 134.7068, y: 1.4368}
-  m_SizeDelta: {x: 207.4137, y: 27.1264}
+  m_AnchoredPosition: {x: 143.52, y: -12.808}
+  m_SizeDelta: {x: 192.4539, y: 54.384}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1889831739
 MonoBehaviour:
@@ -42667,10 +42667,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -42727,8 +42727,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -243, y: -138}
-  m_SizeDelta: {x: 40, y: 40}
+  m_AnchoredPosition: {x: 40, y: -44}
+  m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1938396937
 MonoBehaviour:
@@ -43001,11 +43001,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1976456154}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 25.58, y: 3.36, z: 0}
+  m_LocalPosition: {x: 25.16, y: 3.06, z: 0}
   m_LocalScale: {x: -8.384725, y: 26.630768, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 30
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &1980805033
 GameObject:
@@ -43099,7 +43099,7 @@ GameObject:
   - component: {fileID: 1990994431}
   - component: {fileID: 1990994430}
   m_Layer: 0
-  m_Name: Tech (4)
+  m_Name: Steam Turbine 1
   m_TagString: ST
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43143,7 +43143,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 3, y: 2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -43193,8 +43193,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: d2ca27ca1d7d99446b9c2947cac2f152, type: 3}
+  m_Color: {r: 0.21960784, g: 0.21960784, b: 0.21960784, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -43211,13 +43211,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1990994429}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.41, y: -13.81, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.2967811, w: 0.95494556}
+  m_LocalPosition: {x: -0.86, y: -6.76, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 38
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 37
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 34.529}
 --- !u!1 &2013183338
 GameObject:
   m_ObjectHideFlags: 0
@@ -43421,7 +43421,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2083024569
 RectTransform:
   m_ObjectHideFlags: 0
@@ -43683,7 +43683,7 @@ Transform:
   m_LocalScale: {x: 27.644539, y: 3.255595, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1001 &394398336138102543
 PrefabInstance:
