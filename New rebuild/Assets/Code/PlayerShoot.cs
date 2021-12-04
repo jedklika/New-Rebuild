@@ -28,6 +28,7 @@ public class PlayerShoot : MonoBehaviour
                 GameObject bulletShoot = (GameObject)Instantiate(bullet, transform.position, Quaternion.identity);
                 Vector3 direction = (Input.mousePosition - myScreenPos).normalized;
                 bulletShoot.GetComponent<Rigidbody2D>().velocity = new Vector2(direction.x, direction.y) * bulletSpeed;
+                SoundManager.PlaySound("Pistol SFX");
                 startTimeBtwAttack = Time.time + timeBtwAttack;
             }
             if (Input.GetMouseButtonDown(0) && WS.gun == 2)
@@ -35,6 +36,7 @@ public class PlayerShoot : MonoBehaviour
                 GameObject bulletShoot = (GameObject)Instantiate(ShotgunSlug, transform.position, Quaternion.identity);
                 Vector3 direction = (Input.mousePosition - myScreenPos).normalized;
                 bulletShoot.GetComponent<Rigidbody2D>().velocity = new Vector2(direction.x, direction.y) * bulletSpeed;
+                SoundManager.PlaySound("Shotgun SFX");
                 startTimeBtwAttack = Time.time + timeBtwAttack;
             }
             else if (Input.GetMouseButton(0) && WS.gun == 3)
@@ -42,6 +44,7 @@ public class PlayerShoot : MonoBehaviour
                 GameObject bulletShoot = (GameObject)Instantiate(RifleRound, transform.position, Quaternion.identity);
                 Vector3 direction = (Input.mousePosition - myScreenPos).normalized;
                 bulletShoot.GetComponent<Rigidbody2D>().velocity = new Vector2(direction.x, direction.y) * bulletSpeed;
+                SoundManager.PlaySound("Pistol SFX");
                 startTimeBtwAttack = Time.time + timeBtwAttack;
             }
         }

@@ -34,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
     public bool outControls = true;
 
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -96,6 +97,8 @@ public class PlayerMovement : MonoBehaviour
             outInventory = false;
             inInventory = true;
             Panel.GetComponent<Canvas>().enabled = true;
+            SoundManager.PlaySound("Open SFX");
+
         }
         else if (Input.GetKeyDown(KeyCode.I) && inInventory)
         {
@@ -103,18 +106,22 @@ public class PlayerMovement : MonoBehaviour
             outInventory = true;
             inInventory = false;
             Panel.GetComponent<Canvas>().enabled = false;
+            SoundManager.PlaySound("Close SFX");
         }
 
         //if you press M then store menu will show up
         if (Input.GetKeyDown(KeyCode.M) && outStore)
         {
+            
             Time.timeScale = 0;
             outStore = false;
             inStore = true;
             storePanel.GetComponent<Canvas>().enabled = true;
+            SoundManager.PlaySound("Open SFX");
         }
         else if (Input.GetKeyDown(KeyCode.M) && inStore)
         {
+            SoundManager.PlaySound("Close SFX");
             Time.timeScale = 1;
             outStore = true;
             inStore = false;
@@ -124,6 +131,7 @@ public class PlayerMovement : MonoBehaviour
         //if press C the controls will show up
         if (Input.GetKeyDown(KeyCode.C) && outControls)
         {
+            SoundManager.PlaySound("Open SFX");
             Time.timeScale = 0;
             outControls = false;
             inControls = true;
@@ -131,6 +139,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.C) && inControls)
         {
+            SoundManager.PlaySound("Close SFX");
             Time.timeScale = 1;
             outControls = true;
             inControls = false;

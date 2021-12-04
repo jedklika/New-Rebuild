@@ -1,7 +1,31 @@
 fileFormatVersion: 2
 guid: ffca070420a776041904b2f62711597e
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 7533464567835400210
+    second: Basic Zombie Up. SpriteSheet_0
+  - first:
+      213: -1988176703562982292
+    second: Basic Zombie Up. SpriteSheet_1
+  - first:
+      213: 5152309714117843472
+    second: Basic Zombie Up. SpriteSheet_2
+  - first:
+      213: -4551974087162449533
+    second: Basic Zombie Up. SpriteSheet_3
+  - first:
+      213: 7052803130397421444
+    second: Basic Zombie Up. SpriteSheet_4
+  - first:
+      213: 4340230289700967281
+    second: Basic Zombie Up. SpriteSheet_5
+  - first:
+      213: -2248383575458067289
+    second: Basic Zombie Up. SpriteSheet_6
+  - first:
+      213: 1474000995807166646
+    second: Basic Zombie Up. SpriteSheet_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -32,7 +56,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -41,7 +65,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,9 +99,201 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Basic Zombie Up. SpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 8
+        width: 19
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21812d54c1e3c8860800000000000000
+      internalID: 7533464567835400210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Zombie Up. SpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 8
+        width: 19
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6cdb6962d39864e0800000000000000
+      internalID: -1988176703562982292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Zombie Up. SpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 8
+        width: 19
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01ad9ca036ea08740800000000000000
+      internalID: 5152309714117843472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Zombie Up. SpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 8
+        width: 19
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38136e36fa324d0c0800000000000000
+      internalID: -4551974087162449533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Zombie Up. SpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 8
+        width: 19
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48fe91a641790e160800000000000000
+      internalID: 7052803130397421444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Zombie Up. SpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 8
+        width: 19
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1735405f3789b3c30800000000000000
+      internalID: 4340230289700967281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Zombie Up. SpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 8
+        width: 19
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7accff1fc032cc0e0800000000000000
+      internalID: -2248383575458067289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Zombie Up. SpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 8
+        width: 19
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b088a99814b47410800000000000000
+      internalID: 1474000995807166646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

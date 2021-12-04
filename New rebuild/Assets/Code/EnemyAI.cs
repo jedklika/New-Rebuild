@@ -42,6 +42,8 @@ public class EnemyAI : MonoBehaviour
 
     public float health;
     GameManger GM;
+    public Animator anim;
+    Vector3 dir;
 
 
     // Start is called before the first frame update
@@ -51,20 +53,26 @@ public class EnemyAI : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         SR = GetComponent<SpriteRenderer>();
         GM = FindObjectOfType<GameManger>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+        dir = moveSpots[current].position - transform.position;
+        dir.Normalize();
+        anim.SetFloat("X", dir.x);
+        anim.SetFloat("Y", dir.y);
         STATE enemyState = STATE.Roaming;
         Debug.Log("Roamer");
-        SR.color = Color.blue;
+        
 
 
         if (Vector2.Distance(target.position, transform.position) < enemyRadius){
             enemyState = STATE.ChaseEnemy;
             Debug.Log("Kill");
-            SR.color = Color.red;
+            
         }
         switch (enemyState)
         {
@@ -72,6 +80,11 @@ public class EnemyAI : MonoBehaviour
                 if (Vector2.Distance(transform.position, target.position) > enemyStoppingDistance){
                     transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
                     Debug.Log("Kill Player");
+                    dir = target.position - transform.position;
+                    dir = target.position - transform.position;
+                    dir.Normalize();
+                    anim.SetFloat("X", dir.x);
+                    anim.SetFloat("Y", dir.y);
                     //SR.color = Color.red;
                 }
                 break;
@@ -84,10 +97,18 @@ public class EnemyAI : MonoBehaviour
                         {
                             current = Random.Range(0, moveSpots.Length);
                             waitTime = startWaitTime;
-                        }
+                        dir = moveSpots[current].position - transform.position;
+                        dir.Normalize();
+                        anim.SetFloat("X", dir.x);
+                        anim.SetFloat("Y", dir.y);
+                    }
                     else
                     {
                         waitTime -= Time.deltaTime;
+                        dir = target.position - transform.position;
+                        dir.Normalize();
+                        anim.SetFloat("X", dir.x);
+                        anim.SetFloat("Y", dir.y);
                     }
                     }
                 // randomRoamingTarget = new Vector2(transform.position.x + randomRoamingTargetx, transform.position.y + randomRomaingTargety);

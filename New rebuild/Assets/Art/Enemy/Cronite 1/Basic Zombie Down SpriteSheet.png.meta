@@ -1,7 +1,31 @@
 fileFormatVersion: 2
 guid: eb7d33fad6c07a84e8c6abb74bdf747f
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -7373023797952232507
+    second: Basic Zombie Down SpriteSheet_0
+  - first:
+      213: -3530813082884772889
+    second: Basic Zombie Down SpriteSheet_1
+  - first:
+      213: -1219556772987479946
+    second: Basic Zombie Down SpriteSheet_2
+  - first:
+      213: -5087699321216584946
+    second: Basic Zombie Down SpriteSheet_3
+  - first:
+      213: -3841046313062364560
+    second: Basic Zombie Down SpriteSheet_4
+  - first:
+      213: -2616036566809399779
+    second: Basic Zombie Down SpriteSheet_5
+  - first:
+      213: 8864671777124102757
+    second: Basic Zombie Down SpriteSheet_6
+  - first:
+      213: -66473366242352772
+    second: Basic Zombie Down SpriteSheet_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,7 +65,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,9 +99,201 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Basic Zombie Down SpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 8
+        width: 19
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c34e827be1cda990800000000000000
+      internalID: -7373023797952232507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Zombie Down SpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 8
+        width: 19
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ebe95a4538000fc0800000000000000
+      internalID: -3530813082884772889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Zombie Down SpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 7
+        width: 19
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 678d8a29393431fe0800000000000000
+      internalID: -1219556772987479946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Zombie Down SpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 7
+        width: 19
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e03b3e25c6cd469b0800000000000000
+      internalID: -5087699321216584946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Zombie Down SpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 8
+        width: 19
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07a0810aabcd1bac0800000000000000
+      internalID: -3841046313062364560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Zombie Down SpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 8
+        width: 19
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1ea4e35a98f1bbd0800000000000000
+      internalID: -2616036566809399779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Zombie Down SpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 7
+        width: 19
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 562b9e5a304a50b70800000000000000
+      internalID: 8864671777124102757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Zombie Down SpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 7
+        width: 19
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c71a91a53d6d31ff0800000000000000
+      internalID: -66473366242352772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
